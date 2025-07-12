@@ -1,0 +1,49 @@
+nav.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1050;
+  transition: opacity 0.1s;
+  max-height: 300px;
+}
+
+.navbar-nav .nav-link {
+  letter-spacing: 0.5px;
+  position: relative;
+  z-index: 1;
+  &::before {
+    content: "";
+
+    transform: scaleX(0);
+    transform-origin: center;
+    width: 80%;
+    height: 2px;
+    position: absolute;
+    bottom: -4px;
+    background: rgba(255, 255, 255, 0.8);
+    z-index: -1;
+    transition: all 0.3s;
+  }
+  &:hover {
+    &::before {
+      transform: scaleX(1);
+      border-radius: 2px;
+      z-index: 2;
+    }
+  }
+}
+
+.btn-outline-light {
+  font-weight: 700;
+  border-radius: 20px;
+}
+
+@media (max-width: 991.98px) {
+  .navbar-nav {
+    padding: 0;
+  }
+}
+
+/* start language change */
+
+/* end lang change */
+

@@ -1,0 +1,117 @@
+// Default Theme
+$primary-color: #007bff;
+$background-color: #ffffff;
+$text-color: #212529;
+
+.theme-default {
+  /* start main colors */
+  --color-primary: #023d59;
+  --color-dark: #6a6a6a;
+  --color-light: #c0c1c0;
+  --color-secondary: #e5154f;
+  --color-secondary-light: #f3dce3;
+  --color-background: #ffffff;
+  /* end main colors */
+
+  /* start status colors */
+  --status-confirmed: #023d59;
+  --status-waiting: #f7b000;
+  --status-success: #00cc74;
+  --status-error: #e23737;
+  --status-border-radius: 10px;
+  /* end status colors */
+
+  /* start social icons */
+  --social_bar-left-spacing-ar: 40px !important;
+  --social_bar-right-spacing-en: 40px !important;
+  /* end social icons */
+
+  /* start text field properties */
+  --sign-in-field-height: 48px;
+  --general-field-border-radius: 16px;
+  --general-field-padding: 12px 16px;
+  --general-field-bg-color: #f8f8f8;
+  --general-field-disabled-bg-color: #dddddd;
+  --general-field-border: 1px solid #dddddd;
+  --general-field-placeholder-color: var(--color-primary);
+  --general-field-placeholder-error-color: var(--color-secondary);
+  --general-field-border-error-color: var(--color-secondary);
+  --general-field-height: 56px;
+  /* end text field properties */
+
+  /*start modal*/
+  --modal-content-bg-color: #fff;
+  --modal-header-color: var(--color-primary);
+  /*end modal*/
+
+  /* start buttons properties */
+  //buttons height
+  --main-btn-height: 48px;
+  --secondary-btn-height: 48px;
+  --status-btn-height: 24px;
+  --disable-btn-height: 48px;
+  --general-btn-height: 40px;
+  //button padding
+  --main-btn-padding: 12px 92px;
+  --secondary-btn-padding: 12px 92px;
+  --status-btn-padding: 4px 16px;
+  --disable-btn-padding: 12px 160px;
+  --general-btn-padding: 12px 24px;
+  //button min width
+  --main-btn-min-width: 216px;
+  --secondary-btn-min-width: 216px;
+  --status-btn-min-width: 88px;
+  --disable-btn-min-width: 360px;
+  --general-btn-min-width: 120px;
+  //button border radius
+  --main-btn-border-radius: 16px;
+  --secondary-btn-border-radius: 16px;
+  --status-btn-border-radius: 4px;
+  --disable-btn-border-radius: 16px;
+  --general-btn-border-radius: 16px;
+  /* end buttons properties */
+
+  /* start tabs properties */
+  //tab height
+  --main-tab-height: 40px;
+  --status-tab-height: 40px;
+  --menu-tab-height: 64px;
+
+  //tab padding
+  --main-tab-padding: 12px 48px;
+  --status-tab-padding: 8px 16px;
+
+  //tab min width
+  --main-tab-min-width: 200px;
+  --status-tab-min-width: 104px;
+  /* end tabs properties */
+
+  /* start alert */
+  --alert-border-radius: 8px;
+  --alert-success-bg-color: #b2efbc;
+  --alert-primary-bg-color: #00c3be;
+  --alert-danger-bg-color: red;
+  --alert-success-text-color: #168b00;
+  --alert-primary-text-color: white;
+  --alert-danger-text-color: white;
+  /* end alert */
+}
+
+// Dark Theme
+$dark-background: #121212;
+$dark-text: #e0e0e0;
+
+.theme-dark {
+  --primary-color: #{$primary-color};
+  --background-color: #{$dark-background};
+  --text-color: #{$dark-text};
+  --font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+// Additional Themes (add as needed)
+.theme-blue {
+  --primary-color: #17a2b8;
+  --background-color: #f8f9fa;
+  --text-color: #343a40;
+  --font-family: cursive, Times, serif;
+}

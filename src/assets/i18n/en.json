@@ -1,0 +1,16 @@
+{
+  "helloText": "hello",
+  "Brand": "Brand",
+  "Features": "Features",
+  "App": "App",
+  "Join Us": "Join Us",
+  "Questions": "Questions",
+  "NAV": {
+    "BRAND": "Brand",
+    "FEATURES": "Features",
+    "APP": "App",
+    "JOIN_US": "Join Us",
+    "DRIVER": "Driver",
+    "QUESTIONS": "Questions"
+  }
+}

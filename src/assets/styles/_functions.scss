@@ -1,0 +1,105 @@
+// @function get-btn-property($type, $state, $property) {
+//     @return map-get(map-get(map-get($btn-properties, $type), $state), $property);
+// }
+
+/**========================================================================
+*                           classes groups compiler
+*========================================================================**/
+@function isPropertyEqualsTo($property-alias-name, $property-name) {
+  @if ($property-name == "background-color") {
+    @return index(
+      ("bg-color", "bg", "background-color", "bgclr", "backgroundcolor"),
+      to-lower-case($property-alias-name)
+    );
+  } @else if ($property-name == "color") {
+    @return index(
+      ("text-color", "color", "clr"),
+      to-lower-case($property-alias-name)
+    );
+  } @else if($property-name == "border-radius") {
+    @return index(
+      ("border-radius", "borderradius"),
+      to-lower-case($property-alias-name)
+    );
+  } @else if($property-name == "font-size") {
+    @return index(
+      ("font-size", "fontsize", "textsize", "text-size", "txtsize", "txt-size"),
+      to-lower-case($property-alias-name)
+    );
+  } @else if($property-name == "font-family") {
+    @return index(
+      ("fontfamily", "font-family"),
+      to-lower-case($property-alias-name)
+    );
+  } @else if($property-name == "padding") {
+    @return index(("padding"), to-lower-case($property-alias-name));
+  } @else if($property-name == "margin") {
+    @return index(("margin"), to-lower-case($property-alias-name));
+  } @else if($property-name == "overflow") {
+    @return index(("overflow"), to-lower-case($property-alias-name));
+  } @else if($property-name == "border") {
+    @return index(("border"), to-lower-case($property-alias-name));
+  }
+}
+
+@function isStateValid($class-state) {
+  // Define an array of possible states
+  $possible-states: (
+    "hover",
+    "active",
+    "focus",
+    "disabled",
+    "visited",
+    "link",
+    "focus-within",
+    "focus-visible",
+    "checked",
+    "required",
+    "valid",
+    "invalid"
+  );
+  // Return the index of the state if found, otherwise false
+  @return index($possible-states, $class-state);
+}
+
+@function isPseudoClassValid($class-state) {
+  $pseudo-classes-with-colons: (
+    "before",
+    "after",
+    "first-letter",
+    "first-line",
+    "selection",
+    "backdrop",
+    "placeholder",
+    "marker",
+    "spelling-error",
+    "grammar-error"
+  );
+
+  // Check if the class state exists in the valid pseudo-classes list
+  @if index($pseudo-classes-with-colons, $class-state) {
+    @return true;
+  }
+  @return false;
+}
+
+@function isPropertyAMap($value) {
+  @if type-of($value) == "map" {
+    @return true;
+  }
+  @return false;
+}
+/*end classes group*/
+
+/**========================================================================
+*                           Scroll bar
+*========================================================================**/
+@function getScrollBarPartName($scroll-bar-part) {
+  @if $scroll-bar-part == "scrollbar-size" {
+    @return "*::-webkit-scrollbar";
+  } @else if $scroll-bar-part == "scrollbar-track" {
+    @return "*::-webkit-scrollbar-track";
+  } @else if $scroll-bar-part == "scrollbar-thumb" {
+    @return "*::-webkit-scrollbar-thumb";
+  }
+}

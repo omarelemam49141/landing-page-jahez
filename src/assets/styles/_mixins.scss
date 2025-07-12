@@ -1,0 +1,232 @@
+@mixin setColors($infix, $property, $color) {
+  .#{$infix}-#{$color} {
+    #{$property}: #{"#"}#{$color};
+  }
+}
+
+@mixin status-setting($bg-color, $f-color, $vName) {
+  .status_#{$vName} {
+    background-color: $bg-color;
+    color: $f-color;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--status-border-radius);
+  }
+}
+
+/*
+  minSize -> min font size
+  maxSize -> max font size
+  minVw -> min viewport width
+  maxVw -> max viewport width
+  vName -> component name
+
+  example:-
+  @include font-size-calculation(32, 18, 576, 750, 'btn');
+
+  @media (max-width: 750px) and (min-width: 576px) {
+    .fs-btn-32 {
+      font-size: calc(
+        18px +
+        (32 - 18) *
+        ((100vw - 567px) / (750 - 576))
+      );
+    }
+  }
+*/
+
+@mixin font-size-calculation($minSize, $maxSize, $minVw, $maxVw, $vName: null) {
+  @if $vName {
+    .fs-#{$vName}-#{$maxSize} {
+      @if $minSize == $maxSize {
+        font-size: #{$minSize}px;
+      } @else {
+        font-size: calc(
+          #{$minSize}px +
+            (#{$maxSize} - #{$minSize}) *
+            ((100vw - #{$minVw}px) / (#{$maxVw} - #{$minVw}))
+        );
+      }
+    }
+  } @else {
+    .fs-#{$maxSize} {
+      @if $minSize == $maxSize {
+        font-size: #{$minSize}px;
+      } @else {
+        font-size: calc(
+          #{$minSize}px +
+            (#{$maxSize} - #{$minSize}) *
+            ((100vw - #{$minVw}px) / (#{$maxVw} - #{$minVw}))
+        );
+      }
+    }
+  }
+}
+
+@mixin padding-setting($padding) {
+  .pt-#{$padding} {
+    padding-top: #{$padding}px;
+    @media (max-width: 786px) {
+      padding-top: #{calc($padding / 2)}px;
+    }
+  }
+
+  .pb-#{$padding} {
+    padding-bottom: #{$padding}px;
+
+    @media (max-width: 786px) {
+      padding-bottom: #{calc($padding / 2)}px;
+    }
+  }
+}
+
+@mixin margin-setting($margin) {
+  .mt-#{$margin} {
+    margin-top: #{$margin}px;
+    @media (max-width: 786px) {
+      margin-top: #{calc($margin / 2)}px;
+    }
+  }
+
+  .mb-#{$margin} {
+    margin-bottom: #{$margin}px;
+
+    @media (max-width: 786px) {
+      margin-bottom: #{calc($margin / 2)}px;
+    }
+  }
+}
+
+/*start borders radius*/
+@mixin border-radius(
+  $className,
+  $radiusValue,
+  $overflowValue,
+  $radiusPosition: "all"
+) {
+  $final-class-name: "rounded";
+
+  @if index(("top", "bottom", "left", "right"), $radiusPosition) {
+    $final-class-name: #{$final-class-name}-#{$radiusPosition};
+  }
+
+  $final-class-name: #{$final-class-name}-#{$className};
+
+  @if $overflowValue != null {
+    $final-class-name: #{$final-class-name}-o;
+  }
+
+  .#{$final-class-name} {
+    @if $radiusPosition == "top" {
+      border-top-left-radius: #{$radiusValue};
+      border-top-right-radius: #{$radiusValue};
+    } @else if $radiusPosition == "bottom" {
+      border-bottom-left-radius: #{$radiusValue};
+      border-bottom-right-radius: #{$radiusValue};
+    } @else if $radiusPosition == "left" {
+      border-top-left-radius: #{$radiusValue};
+      border-bottom-left-radius: #{$radiusValue};
+    } @else if $radiusPosition == "right" {
+      border-top-right-radius: #{$radiusValue};
+      border-bottom-right-radius: #{$radiusValue};
+    } @else if $radiusPosition == "all" {
+      border-radius: #{$radiusValue};
+    }
+
+    @if $overflowValue {
+      overflow: #{$overflowValue};
+    }
+  }
+}
+/*end border radius*/
+
+/**========================================================================
+*?                           classes groups compiler
+*========================================================================**/
+@mixin properties-maker($state-list) {
+  @each $property, $value in $state-list {
+    // Check for background-color properties
+    @if isPropertyEqualsTo($property, "background-color") {
+      background-color: $value;
+    }
+    // Check for text-color properties
+    @else if isPropertyEqualsTo($property, "color") {
+      color: $value;
+    }
+    // Check for border-radius properties
+    @else if isPropertyEqualsTo($property, "border-radius") {
+      border-radius: $value;
+    }
+    // Check for font-size properties
+    @else if isPropertyEqualsTo($property, "font-size") {
+      font-size: $value;
+    }
+    // Check for font-family properties
+    @else if isPropertyEqualsTo($property, "font-family") {
+      font-family: $value;
+    }
+    // Check for padding properties
+    @else if isPropertyEqualsTo($property, "padding") {
+      padding: $value;
+    }
+    // Check for margin properties
+    @else if isPropertyEqualsTo($property, "margin") {
+      margin: $value;
+    }
+    // Check for overflow properties
+    @else if isPropertyEqualsTo($property, "overflow") {
+      overflow: $value;
+    }
+    // Check for border properties
+    @else if isPropertyEqualsTo($property, "border") {
+      border: $value;
+    } @else if isPropertyAMap($value) {
+      @include state-values-maker($property, $value);
+    } @else {
+      #{$property}: $value;
+    }
+  }
+}
+
+@mixin state-values-maker($class-state, $state-values) {
+  @if to-lower-case($class-state) == "primary" {
+    @include properties-maker($state-values);
+  } @else if isStateValid(to-lower-case($class-state)) {
+    &:#{to-lower-case($class-state)} {
+      @include properties-maker($state-values);
+    }
+  } @else if isPseudoClassValid(to-lower-case($class-state)) {
+    &::#{to-lower-case($class-state)} {
+      @include properties-maker($state-values);
+    }
+  } @else {
+    #{$class-state} {
+      @include properties-maker($state-values);
+    }
+  }
+}
+
+@mixin classes-groups-maker($group-list-name) {
+  @each $class-type, $class-values in $group-list-name {
+    .#{$class-type} {
+      @each $class-state, $state-values in $class-values {
+        @include state-values-maker($class-state, $state-values);
+      }
+    }
+  }
+}
+
+/**========================================================================
+*                           Scroll bar
+*========================================================================**/
+@mixin scroll-bar-maker($scroll-bar-list) {
+  @each $scroll-bar-part, $states in $scroll-bar-list {
+    #{getScrollBarPartName($scroll-bar-part)} {
+      @each $state, $properties in $states {
+        @include state-values-maker($state, $properties);
+      }
+    }
+  }
+}

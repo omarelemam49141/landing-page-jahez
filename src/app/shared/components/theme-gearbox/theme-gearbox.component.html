@@ -1,0 +1,9 @@
+<div class="gearbox">
+    <button
+      *ngFor="let theme of themes"
+      class="btn btn-sm btn-outline-primary m-1"
+      (click)="changeTheme(theme.value)"
+    >
+      {{ theme.name }}
+    </button>
+  </div>

@@ -1,0 +1,342 @@
+@import "assets/styles/themes.scss";
+@import "assets/styles/variables.scss";
+@import "assets/styles/functions.scss";
+@import "assets/styles/mixins.scss";
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
+
+@font-face {
+  font-family: Cfont-Bold;
+  // src: $bold_font_url;
+}
+
+@font-face {
+  font-family: Cfont-Regular;
+  // src: $regular_font_url;
+}
+
+@font-face {
+  font-family: Cfont-light;
+  // src: $light_font_url;
+}
+
+body, * {
+  font-family: 'Cairo', sans-serif !important;
+}
+
+:lang(ar) body {
+  font-family: Cfont-Regular;
+}
+
+:lang(en) body {
+  font-family: Cfont-Regular;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/*enhanced font size*/
+@media (min-width: 1400px) {
+  @each $sizeName, $size, $vName in $xlarge-screen-fontsizes {
+    @if $vName {
+      .fs-#{$vName}-#{$sizeName} {
+        font-size: #{$size}px;
+      }
+    } @else {
+      .fs-#{$sizeName} {
+        font-size: #{$size}px;
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  @each $sizeName, $size, $vName in $extra-small-screen-fontSizes {
+    @if $vName {
+      .fs-#{$vName}-#{$sizeName} {
+        font-size: #{$size}px;
+      }
+    } @else {
+      .fs-#{$sizeName} {
+        font-size: #{$size}px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1400px) and (min-width: 750px) {
+  @each $maxSize, $sminSize, $vName in $Max-Min-fontSizes {
+    @include font-size-calculation($sminSize, $maxSize, 750, 1400, $vName);
+  }
+}
+
+@media (max-width: 750px) and (min-width: 576px) {
+  @each $maxSize, $sminSize, $vName in $Max-Min-fontSizes {
+    @include font-size-calculation($sminSize, $maxSize, 576, 750, $vName);
+  }
+}
+/*enhanced font size*/
+// ================end of font-size=======================================================
+
+/*enhanced colors*/
+@each $color in $bg-colors {
+  @include setColors("bg", "background-color", $color);
+}
+
+@each $color in $text-colors {
+  @include setColors("text", "color", $color);
+}
+/*enhanced colors*/
+
+/**========================================================================
+   *?                           fonts-class
+   *========================================================================**/
+:lang(ar) .f-w-bold {
+  font-family: Cfont-bold;
+}
+
+:lang(en) .f-w-bold {
+  font-family: Cfont-bold;
+}
+
+:lang(ar) .f-w-regular {
+  font-family: Cfont-Regular !important;
+}
+
+:lang(en) .f-w-regular {
+  font-family: Cfont-Regular !important;
+}
+
+:lang(ar) .f-w-medium {
+  font-family: Cfont-Medium;
+}
+
+:lang(en) .f-w-light {
+  font-family: Cfont-Ligth !important;
+}
+
+:lang(ar) .f-w-light {
+  font-family: Cfont-Ligth !important;
+}
+:lang(en) .f-w-light {
+  font-family: Cfont-Black !important;
+}
+
+:lang(ar) .f-w-light {
+  font-family: Cfont-Black !important;
+}
+
+/**========================================================================
+   *?                           color-variables
+   *========================================================================**/
+.textMain {
+  color: var(--color-primary);
+}
+.textMainLight {
+  color: var(--color-light);
+}
+.textMainDark {
+  color: var(--color-dark);
+}
+.backgroundMain {
+  background-color: var(--color-background);
+}
+
+/*enhanced colors*/
+@each $color in $bg-colors {
+  @include setColors("bg", "background-color", $color);
+}
+
+@each $color in $text-colors {
+  @include setColors("text", "color", $color);
+}
+/*enhanced colors*/
+
+/* --------------------------------- contract status  ---------------------------------------- */
+@each $bg-color, $f-color, $vName in $status-color {
+  @include status-setting($bg-color, $f-color, $vName);
+}
+
+/* start padding */
+@each $padding in $padding-style {
+  @include padding-setting($padding);
+}
+/* end padding */
+
+/* start margin */
+@each $margin in $margin-style {
+  @include margin-setting($margin);
+}
+/* end margin */
+
+/**========================================================================
+   *                           tooltip                                    *
+   *========================================================================**/
+.p-tooltip-text {
+  background-color: map-get($tooltip-text-bg-color, main);
+  border-radius: map-get($tooltip-text-border-radius, main);
+  padding: map-get($tooltip-text-padding, main);
+  position: relative;
+  bottom: map-get(map-get($tooltip-text-position, main), bottom);
+  left: map-get(map-get($tooltip-text-position, main), left);
+  height: map-get($tooltip-text-height, main);
+  font-family: map-get($tooltip-font-family, main);
+  text-align: map-get(map-get($tooltip-text-display, main), text-align);
+  display: map-get(map-get($tooltip-text-display, main), display);
+  justify-content: map-get(
+    map-get($tooltip-text-display, main),
+    justify-content
+  );
+  align-items: map-get(map-get($tooltip-text-display, main), align-items);
+  font-size: map-get($tooltip-text-font-size, main);
+}
+.p-tooltip-arrow {
+  display: none;
+}
+
+.p-tooltip-text::after {
+  content: "";
+  position: absolute;
+  right: map-get($tooltip-text-after-position, right);
+  z-index: 0;
+  bottom: map-get($tooltip-text-after-position, bottom);
+  width: map-get($tooltip-text-after-size, width);
+  height: map-get($tooltip-text-after-size, height);
+  border-left: map-get($tooltip-text-after-border, left);
+  border-right: map-get($tooltip-text-after-border, right);
+  border-top: map-get($tooltip-text-after-border, top);
+}
+
+.subAddressTooltip {
+  .p-tooltip-text {
+    background-color: map-get($tooltip-text-bg-color, sub);
+    border-radius: map-get($tooltip-text-border-radius, sub);
+    padding: map-get($tooltip-text-padding, sub);
+    position: relative;
+    bottom: map-get(map-get($tooltip-text-position, sub), bottom);
+    left: map-get(map-get($tooltip-text-position, sub), left);
+    font-family: map-get($tooltip-font-family, sub);
+    text-align: map-get(map-get($tooltip-text-display, sub), text-align);
+    display: map-get(map-get($tooltip-text-display, sub), display);
+    justify-content: map-get(
+      map-get($tooltip-text-display, sub),
+      justify-content
+    );
+    align-items: map-get(map-get($tooltip-text-display, sub), align-items);
+    font-size: map-get($tooltip-text-font-size, sub);
+  }
+}
+
+/**========================================================================
+   *?                           Borders radius
+   *========================================================================**/
+@each $border in $borders-radius-list {
+  $className: nth($border, 1);
+  $radiusValue: nth($border, 2);
+  $overflowValue: if(length($border) >= 3, nth($border, 3), null);
+  $radiusPosition: if(length($border) == 4, nth($border, 4), "all");
+
+  @include border-radius(
+    $className,
+    $radiusValue,
+    $overflowValue,
+    $radiusPosition
+  );
+}
+
+/**========================================================================
+   *?                           Alerts
+   *========================================================================**/
+.alert {
+  border: none;
+  border-radius: var(--alert-border-radius);
+}
+
+.alert-success {
+  background-color: map-get($alert-bg-color, success);
+  color: map-get($alert-text-color, success);
+}
+
+.alert-primary {
+  background-color: map-get($alert-bg-color, primary);
+  color: map-get($alert-text-color, primary);
+}
+
+.alert-danger {
+  background-color: map-get($alert-bg-color, danger);
+  color: map-get($alert-text-color, danger);
+}
+
+/**========================================================================
+*?                           Buttons
+*========================================================================**/
+@include classes-groups-maker($btns);
+
+button:disabled {
+  display: block;
+  height: var(--disable-btn-height);
+  width: var(--disable-btn-min-width);
+  padding: var(--disable-btn-padding);
+  border-radius: var(--disable-btn-border-radius);
+  background-color: var(--color-light);
+  color: #989898;
+  border: none;
+}
+
+/**========================================================================
+   *                           Scroll bar
+   *========================================================================**/
+
+   @media (min-width: 768px) {
+    @include scroll-bar-maker($scroll-bar);
+  }
+
+/**========================================================================
+   *?                           form control inputs
+   *========================================================================**/
+.form-control::placeholder {
+  color: #b7b7b7 !important;
+}
+
+.form-control {
+  border-radius: var(--general-field-border-radius);
+  color: var(--color-primary);
+  background-color: var(--general-field-bg-color);
+  border: var(--general-field-border);
+  padding: var(--general-field-padding);
+  height: var(--general-field-height);
+}
+
+.form-control:focus {
+  color: var(--color-primary);
+  outline: 0;
+}
+
+.form-control::placeholder {
+  color: var(--general-field-placeholder-color);
+}
+
+.form-control.error {
+  border-color: var(--general-field-border-error-color);
+}
+
+.form-control.error::placeholder {
+  border-color: var(--general-field-placeholder-error-color);
+}
+
+.signin-control {
+  height: var(--sign-in-field-height);
+}
+
+@media (min-width: 700px) {
+  .signup-control,
+  .signup-control-middle {
+    padding: 16px 24px;
+  }
+}
+@media (max-width: 699px) {
+  .signup-control,
+  .signup-control-middle {
+    padding: 0;
+  }
+}

@@ -1,0 +1,26 @@
+<nav #navbar class="navbar navbar-expand-lg navbar-dark bg-danger py-3">
+  <div class="container-fluid">
+    <!-- Hamburger menu for mobile -->
+    <button class="navbar-toggler ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- Language Switcher (mobile) -->
+    <div class="align-items-center mt-0 mt-lg-0 d-flex d-lg-none">
+      <a class="btn btn-outline-light px-3 py-1" (click)="toggleLanguage()">{{isLangArabic ? 'EN' : 'عربى'}}</a>
+    </div>
+    <!-- Navbar links -->
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav align-items-center w-100 justify-content-center gap-4 fs-20">
+        <li class="nav-item"><a #navLink class="nav-link text-white" href="#">{{'NAV.BRAND' | translate}}</a></li>
+        <li class="nav-item"><a #navLink class="nav-link text-white" href="#">{{'NAV.FEATURES' | translate}}</a></li>
+        <li class="nav-item"><a #navLink class="nav-link text-white" href="#">{{'NAV.APP' | translate}}</a></li>
+        <li class="nav-item"><a #navLink class="nav-link text-white" href="#">{{'NAV.JOIN_US' | translate}}</a></li>
+        <li class="nav-item"><a #navLink class="nav-link text-white" href="#">{{'NAV.QUESTIONS' | translate}}</a></li>
+      </ul>
+      <!-- Language Switcher (desktop) -->
+      <div class="align-items-center mt-0 mt-lg-0 d-none d-lg-flex">
+        <a class="btn btn-outline-light px-3 py-1" (click)="toggleLanguage()">{{isLangArabic ? 'EN' : 'عربى'}}</a>
+      </div>
+    </div>
+  </div>
+</nav>

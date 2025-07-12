@@ -1,0 +1,484 @@
+/* Start Font type */
+// $bold_font_url : /url(./assets/fonts/19305-ALQABAS-BOLD.TTF);
+// $regular_font_url : url(./assets/fonts/ALQABAS-REGULAR.TTF);
+// $light_font_url : url(./assets/fonts/ARBFONTS-19306-ALQABAS-LIGHT.TTF);
+/* End Font type */
+
+/*start font sizes*/
+/**
+(32, 18) =>
+@media (max-width: 576px) {
+  fs-32 {
+    font-size: 18px;
+  }
+}
+
+(20, 18, 'btn') =>
+@media (max-width: 576px) {
+  fs-btn-20 {
+    font-size: 18px;
+  }
+}
+**/
+$extra-small-screen-fontSizes: (32, 18) (24, 18) (20, 16) (20, 18, "btn")
+  (20, 18) (18, 16) (16, 14) (14, 12) (12, 12);
+/**
+Case 1:-
+(32, 18, 'btn') =>
+  @media (max-width: 1400px) and (min-width: 750px) {
+    fs-btn-32 {
+      font-size: calc(
+        18px +
+        (32 - 18) *
+        ((100vw - 750px) / (1400 - 750))
+      );
+    }
+  }
+
+  @media (max-width: 750px) and (min-width: 576px) {
+    fs-btn-32 {
+      font-size: calc(
+        18px +
+        (32 - 18) *
+        ((100vw - 567px) / (750 - 576))
+      );
+    }
+  }
+
+Case 2:-
+(32, 18) =>
+  @media (max-width: 1400px) and (min-width: 750px) {
+    fs-32 {
+      font-size: calc(
+        18px +
+        (32 - 18) *
+        ((100vw - 750px) / (1400 - 750))
+      );
+    }
+  }
+
+  @media (max-width: 750px) and (min-width: 576px) {
+    fs-32 {
+      font-size: calc(
+        18px +
+        (32 - 18) *
+        ((100vw - 567px) / (750 - 576))
+      );
+    }
+  }
+**/
+$Max-Min-fontSizes: (32, 18) (24, 18) (20, 16) (20, 18, "btn") (18, 16) (16, 14)
+  (14, 12) (12, 12);
+/**
+(32, 32) =>
+@media (min-width: 1400px) {
+  fs-32 {
+    font-size: 32px;
+  }
+}
+(32, 32, 'btn') =>
+@media (min-width: 1400px) {
+  fs-btn-32 {
+    font-size: 32px;
+  }
+}
+**/
+$xlarge-screen-fontsizes: (32, 32) (24, 24) (20, 20) (20, 20, "btn") (18, 18)
+  (16, 16) (14, 14) (12, 12);
+/*end font sizes*/
+
+/*start text colors*/
+$text-colors: "D8DAE3" "FDFDFD" "00C3BE" "FFFFFF" "00C2BD" "EE8700" "FC9F11"
+  "B2B4C7" "FFBA00" "F7B000" "0083CC" "6A6A6A" "262626" "2B2B2B" "006D7B"
+  "CDDE22" "B7C61F" "005763" "1FA397" "6A6A6A" "A1A1A1" "E11414" "192F5A"
+  "00C2BD" "989CA2" "B2B4C7" "459CA0" "C2CE8E" "B7B7B7" "FF0000";
+/*end text colors*/
+
+/*start bg colors*/
+$bg-colors: "192F5A" "00C3BE" "FFBA00" "0e234A" "459CA0" "C2CE8E" "B7B7B7";
+/*end bg colors*/
+
+/*start status colors*/
+//(bg-color, font-color, class-name)
+$status-color: (var(--status-confirmed), #ffffff, "confirmed") (var(--status-waiting), #ffffff, "waiting")
+  (var(--status-success), #ffffff, "success") (var(--status-error), #ffffff, "error");
+/*end status colors*/
+
+/*start padding*/
+$padding-style: 40 44 20 60 24 12;
+/*end padding*/
+
+/*start margin*/
+$margin-style: 40 20 60 30 32 33 36 24 28 22 31 12 48 76 88 90 15 96 107 150;
+/*end margin*/
+
+/**========================================================================
+   *                           tooltip                             *
+   *========================================================================**/
+$tooltip-text-bg-color: (
+  main: #52b78e,
+  sub: rgba(0, 0, 0, 0.7),
+);
+$tooltip-text-border-radius: (
+  main: 6px,
+  sub: 6px,
+);
+$tooltip-text-padding: (
+  main: 1ex 1ex,
+  sub: 1rem 1rem,
+);
+$tooltip-text-position: (
+  main: (
+    left: -35px,
+    bottom: 10px,
+    text-align: center,
+  ),
+  sub: (
+    left: -8px,
+    bottom: 10px,
+    text-align: center,
+  ),
+);
+$tooltip-text-height: (
+  main: 30px,
+  sub: 30px,
+);
+$tooltip-font-family: (
+  main: AvenirArabicMedium,
+  sub: AvenirArabicMedium,
+);
+$tooltip-text-display: (
+  main: (
+    display: flex,
+    justify-content: center,
+    text-align: center,
+    align-items: center,
+  ),
+  sub: (
+    display: flex,
+    justify-content: center,
+    text-align: center,
+    align-items: center,
+  ),
+);
+$tooltip-text-font-size: (
+  main: 16px,
+  sub: 16px,
+);
+$tooltip-text-after-position: (
+  bottom: -95px,
+  right: 15px,
+);
+
+$tooltip-text-after-border: (
+  left: 10px solid transparent,
+  right: 10px solid transparent,
+  top: 8px solid #7ec88e,
+);
+
+$tooltip-text-after-size: (
+  width: 20px,
+  height: 100%,
+);
+/*end tooltip*/
+
+/**========================================================================
+   *                           Borders radius                              *
+   *========================================================================**/
+//doc:-
+//(rounded-$className, $radiusValue, $overflowValue:null, $radiusPosition: 'all')
+$borders-radius-list: (
+  ("8", 0.5rem),
+  //.rounded-8 {border-radius: 0.5rem;}
+  ("10", 10px),
+  //.rounded-10 {border-radius: 10px;}
+  ("16", 1rem),
+  //.rounded-16 {border-radius: 1rem;}
+  ("10", 10px, auto),
+  //.rounded-10-o {border-radius: 10px; overflow: auto;}
+  ("16", 1rem, hidden),
+  //.rounded-16-o {border-radius: 1rem; overflow: hidden;}
+  ("16", 1rem, hidden, top),
+  //.rounded-top-16-o {border-top-left-radius: 1rem; border-top-right-radius: 1rem; overflow: hidden;}
+  ("16", 1rem, hidden, bottom),
+  //.rounded-bottom-16-o {border-bottom-left-radius: 1rem; border-bottom-right-radius: 1rem; overflow: hidden;}
+);
+/*end border radius*/
+
+/**========================================================================
+*?                           Alerts
+*========================================================================**/
+$alert-bg-color: (
+  success: var(--alert-success-bg-color),
+  primary: var(--alert-primary-bg-color),
+  danger: var(--alert-danger-bg-color)
+);
+$alert-text-color: (
+  success: var(--alert-success-text-color),
+  primary: var(--alert-primary-text-color),
+  danger: var(--alert-danger-text-color)
+);
+
+/**========================================================================
+*                           Buttons
+*========================================================================**/
+//docs:
+/*
+  $group-name(ex: any name): (
+    class-name: (
+      state(ex: hover, disabled, etc): (
+        property: value,
+        .
+        .
+        .
+      )
+    )
+  )
+*/
+
+$btns: (
+  main-button: (
+    primary: (
+      display: block,
+      height: var(--main-btn-height),
+      width: var(--main-btn-min-width),
+      padding: var(--main-btn-padding),
+      border-radius: var(--main-btn-border-radius),
+      background-color: var(--color-primary),
+      color: #ffffff,
+      border: none
+    )
+  ),
+
+  secondary-button: (
+    primary: (
+      display: block,
+      height: var(--secondary-btn-height),
+      width: var(--secondary-btn-min-width),
+      padding: var(--secondary-btn-padding),
+      border-radius: var(--secondary-btn-border-radius),
+      background-color: var(--color-secondary),
+      color: #ffffff,
+      border: none
+    )
+  ),
+
+  disable-button:(
+    primary: (
+      display: block,
+      height: var(--disable-btn-height),
+      width: var(--disable-btn-min-width),
+      padding: var(--disable-btn-padding),
+      border-radius: var(--disable-btn-border-radius),
+      background-color: var(--color-light),
+      color: #989898,
+      border: none
+    )
+  ),
+
+  primary-button: (
+    primary: (
+      display: block,
+      height: var(--general-btn-height),
+      width: var(--general-btn-min-width),
+      padding: var(--general-btn-padding),
+      border-radius: var(--general-btn-border-radius),
+      background-color: var(--color-primary),
+      color: #ffffff,
+      border: none
+    )
+  ),
+
+  outline-button: (
+    primary: (
+      display: block,
+      height: var(--general-btn-height),
+      width: var(--general-btn-min-width),
+      padding: var(--general-btn-padding),
+      border-radius: var(--general-btn-border-radius),
+      background-color: #f6f6f6,
+      color: var(--color-secondary),
+      border: 1px solid #FF0047
+    )
+  ),
+
+  danger-button: (
+    primary: (
+      display: block,
+      height: var(--general-btn-height),
+      width: var(--general-btn-min-width),
+      padding: var(--general-btn-padding),
+      border-radius: var(--general-btn-border-radius),
+      background-color: var(--color-secondary),
+      color: #ffffff,
+      border: none
+    )
+  ),
+
+  modalButton: (
+    primary: (
+      min-width: 124px,
+      bg-color: #ffffff,
+      text-color: black,
+      border-radius: 24px,
+      height: 48px,
+    ),
+  ),
+  cancel-button: (
+    primary: (
+      bg-color: #b2b4c7,
+      text-color: #0e234b,
+      border-radius: 24px,
+      border: 1px solid #b2b4c7,
+      height: 24px,
+      min-width: 88px,
+    ),
+  ),
+  waiting-button: (
+    primary: (
+      bg-color: #ffba00,
+      text-color: #0e234b,
+      border-radius: 24px,
+      border: 1px solid #ffba00,
+      height: 24px,
+      min-width: 88px,
+    ),
+  ),
+  done-button: (
+    primary: (
+      bg-color: #ffffff,
+      text-color: #0e234b,
+      border-radius: 2px,
+      border: 1px solid #ffffff,
+      height: 24px,
+      min-width: 88px,
+    ),
+  ),
+  notConfirmed-button: (
+    primary: (
+      bg-color: #00c3be,
+      text-color: #0e234b,
+      border-radius: 2px,
+      height: 24px,
+      min-width: 88px,
+      border: 1px solid #00c3be,
+    ),
+  ),
+  trans-button: (
+    primary: (
+      bg-color: #c2ce8e,
+      text-color: black,
+      border-radius: 24px,
+      padding: 7px 32px 14px 35px,
+      font-size: 20px,
+      font-weight: normal,
+      height: 48px,
+      font-family: Cfont-Regular,
+    ),
+    hover: (
+      bg-color: #c2ce8e,
+      text-color: white,
+    ),
+  ),
+  selected: (
+    primary: (
+      bg-color: #f7b000,
+      text-color: #000,
+      border-radius: 4px,
+      height: 56px,
+      border: 1px solid #f7b000,
+    ),
+    hover: (
+      bg-color: #f7b000,
+      text-color: #000,
+      border-radius: 24px,
+      border: 1px solid #f7b000,
+    ),
+  ),
+  btn-close: (
+    primary: (
+      border-radius: 2px,
+      border: 1px solid #00c3be,
+    ),
+  ),
+  details-button: (
+    primary: (
+      bg-color: transparent,
+      text-color: white,
+      border-radius: 4px,
+      border: 1px solid white,
+      height: 40px,
+    ),
+  ),
+  swal2-cancel: (
+    primary: (
+      bg-color: #e23737,
+      text-color: #fff,
+      border-radius: 4px,
+      border: 1px solid #e23737,
+      text-transform: capitalize,
+      min-width: 124px,
+    ),
+    hover: (
+      bg-color: white,
+      text-color: #e23737,
+      border: 1px solid #e23737,
+      svg-icon: (
+        fill: white,
+      ),
+    ),
+    focus: (
+      box-shadow: 0 0 0 0.25rem #f5843354,
+    ),
+    svg-icon: (
+      fill: white,
+    ),
+  ),
+  btn-arrow: (
+    focus: (
+      border: none,
+      outline: none,
+    ),
+    svg-icon: (
+      fill: white,
+    ),
+  ),
+);
+
+/**========================================================================
+*                           Scroll bar
+*========================================================================**/
+$scroll-bar: (
+  scrollbar-size: (
+    primary: (
+      height: 99px,
+      width: 10px,
+    ),
+  ),
+
+  scrollbar-track: (
+    primary: (
+      border-radius: 5px,
+      background-color: #f7f7f7,
+    ),
+    hover: (
+      background-color: #f7f7f7,
+    ),
+    active: (
+      background-color: #f7f7f7,
+    ),
+  ),
+
+  scrollbar-thumb: (
+    primary: (
+      border-radius: 5px,
+      background-color: #c2ce8e,
+    ),
+    hover: (
+      background-color: #c2ce8e
+    ),
+    active: (
+      background-color: #c2ce8e
+    )
+  ),
+);
