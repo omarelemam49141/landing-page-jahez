@@ -1,0 +1,106 @@
+<section class="features-section">
+  <!-- Main Features Header -->
+  <div class="features-header">
+    <h2 class="main-title">{{ 'features.title' | translate }}</h2>
+    <p class="subtitle">{{ 'features.subtitle' | translate }}</p>
+  </div>
+
+  <!-- Features Content with horizontal layout -->
+  <div class="features-content">
+    <!-- Left Features Column -->
+    <div class="features-column left-column">
+      <!-- Feature 1 -->
+      <div class="feature-card feature-1">
+        <div class="feature-icon">
+          <img src="https://cdn-icons-png.flaticon.com/512/3652/3652191.png" alt="Calendar Icon" />
+        </div>
+        <h3>{{ 'features.feature1.title' | translate }}</h3>
+        <p>{{ 'features.feature1.desc' | translate }}</p>
+        <div class="feature-secondary">
+          <img src="https://cdn-icons-png.flaticon.com/512/1055/1055183.png" alt="Delivery Icon" />
+          <span>{{ 'features.feature1.secondary' | translate }}</span>
+        </div>
+      </div>
+
+      <!-- Feature 3 -->
+      <div class="feature-card feature-3">
+        <div class="feature-icon">
+          <img src="https://cdn-icons-png.flaticon.com/512/1046/1046874.png" alt="Restaurant Icon" />
+        </div>
+        <h3>{{ 'features.feature3.title' | translate }}</h3>
+        <p>{{ 'features.feature3.desc' | translate }}</p>
+        <div class="feature-secondary">
+          <img src="https://cdn-icons-png.flaticon.com/512/2921/2921222.png" alt="Restaurant Count Icon" />
+          <span>{{ 'features.feature3.secondary' | translate }}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Center Phone Mockup -->
+    <div class="app-mockup">
+      <img src="https://i.imgur.com/xNvQQyS.png" alt="Jahez App Mockup" class="phone-image" />
+    </div>
+
+    <!-- Right Features Column -->
+    <div class="features-column right-column">
+      <!-- Feature 2 -->
+      <div class="feature-card feature-2">
+        <div class="feature-icon">
+          <img src="https://cdn-icons-png.flaticon.com/512/2088/2088617.png" alt="Clock Icon" />
+        </div>
+        <h3>{{ 'features.feature2.title' | translate }}</h3>
+        <p>{{ 'features.feature2.desc' | translate }}</p>
+        <div class="feature-secondary">
+          <img src="https://cdn-icons-png.flaticon.com/512/1946/1946436.png" alt="Home Icon" />
+          <span>{{ 'features.feature2.secondary' | translate }}</span>
+        </div>
+      </div>
+
+      <!-- Feature 4 -->
+      <div class="feature-card feature-4">
+        <div class="feature-icon">
+          <img src="https://cdn-icons-png.flaticon.com/512/1087/1087815.png" alt="Payment Icon" />
+        </div>
+        <h3>{{ 'features.feature4.title' | translate }}</h3>
+        <p>{{ 'features.feature4.desc' | translate }}</p>
+        <div class="feature-secondary">
+          <img src="https://cdn-icons-png.flaticon.com/512/3064/3064197.png" alt="Security Icon" />
+          <span>{{ 'features.feature4.secondary' | translate }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- App Screenshots Carousel Section -->
+  <div class="carousel-section">
+    <h2 class="carousel-title">{{ 'features.carousel.title' | translate }}</h2>
+    
+    <div class="carousel-container" [attr.dir]="isRTL ? 'rtl' : 'ltr'">
+      <button class="carousel-btn prev-btn" (click)="previousSlide()" [disabled]="isAtStart">
+        <img [src]="isRTL ? 'https://cdn-icons-png.flaticon.com/512/271/271228.png' : 'https://cdn-icons-png.flaticon.com/512/271/271220.png'" alt="Previous" />
+      </button>
+      
+      <div class="carousel-wrapper" #carouselWrapper>
+        <div class="carousel-track" #carouselTrack>
+          <div class="carousel-slide" *ngFor="let image of carouselImages; let i = index">
+            <img [src]="image.url" [alt]="image.alt" class="carousel-image" />
+          </div>
+        </div>
+      </div>
+      
+      <button class="carousel-btn next-btn" (click)="nextSlide()" [disabled]="isAtEnd">
+        <img [src]="isRTL ? 'https://cdn-icons-png.flaticon.com/512/271/271220.png' : 'https://cdn-icons-png.flaticon.com/512/271/271228.png'" alt="Next" />
+      </button>
+    </div>
+
+    <!-- Carousel Indicators -->
+    <div class="carousel-indicators">
+      <button 
+        *ngFor="let image of carouselImages; let i = index" 
+        class="indicator" 
+        [class.active]="i === currentSlide"
+        (click)="goToSlide(i)">
+      </button>
+    </div>
+  </div>
+</section> 

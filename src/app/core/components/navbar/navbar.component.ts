@@ -42,6 +42,10 @@ export class NavbarComponent implements AfterViewInit {
   }
 
   ngAfterViewInit(): void {
+    // Set CSS variable for navbar height
+    const navbarHeight = this.navbarRef.nativeElement.offsetHeight + 'px';
+    document.documentElement.style.setProperty('--navbar-height', navbarHeight);
+
     gsap.set(this.navbarRef.nativeElement, {
       opacity: 1,
       y: "0%",

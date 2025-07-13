@@ -1,16 +1,51 @@
 {
-  "helloText": "hello",
-  "Brand": "Brand",
-  "Features": "Features",
-  "App": "App",
-  "Join Us": "Join Us",
-  "Questions": "Questions",
   "NAV": {
-    "BRAND": "Brand",
+    "BRAND": "Alheba",
     "FEATURES": "Features",
     "APP": "App",
     "JOIN_US": "Join Us",
     "DRIVER": "Driver",
     "QUESTIONS": "Questions"
+  },
+  "HEADER": {
+    "TITLE": "Your food is ready with Jahez",
+    "SUBTITLE": "The easiest and fastest service to reach the restaurant you love."
+  },
+  "SERVICES": {
+    "TITLE1": "Who is Jahez?",
+    "DESC1": "Jahez is a Saudi platform specialized in delivering online restaurant orders. Because our quality standards are high, we at Jahez are keen to provide a unique customer experience.",
+    "TITLE2": "Fast Delivery",
+    "DESC2": "We ensure your food arrives hot and fresh, thanks to our efficient delivery network.",
+    "TITLE3": "Wide Restaurant Selection",
+    "DESC3": "Choose from a wide variety of restaurants and cuisines to satisfy every craving."
+  },
+  "features": {
+    "title": "Features",
+    "subtitle": "Top features of Jahez app",
+    "feature1": {
+      "title": "Scheduled Delivery",
+      "desc": "Get your food delivered at the time that suits you. Schedule your delivery to your door with ease!",
+      "secondary": "Order Tracking"
+    },
+    "feature2": {
+      "title": "Fast Delivery",
+      "desc": "Start from your browser or the app and get your order quickly and easily!",
+      "secondary": "Home Chefs"
+    },
+    "feature3": {
+      "title": "Wide Selection",
+      "desc": "Choose from a wide variety of restaurants and cuisines to satisfy every craving and taste preference.",
+      "secondary": "Thousands of Restaurants"
+    },
+    "feature4": {
+      "title": "Secure Payment",
+      "desc": "Pay safely and conveniently through the app with multiple secure and guaranteed payment methods.",
+      "secondary": "Full Protection"
+    },
+    "carousel": {
+      "title": "Get to know Jahez",
+      "previous": "Previous",
+      "next": "Next"
+    }
   }
 }

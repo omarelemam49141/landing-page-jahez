@@ -35,6 +35,11 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  overflow-x: hidden;
+  height: 2000px;
+}
+
 /*enhanced font size*/
 @media (min-width: 1400px) {
   @each $sizeName, $size, $vName in $xlarge-screen-fontsizes {
@@ -272,16 +277,16 @@ html {
 *========================================================================**/
 @include classes-groups-maker($btns);
 
-button:disabled {
-  display: block;
-  height: var(--disable-btn-height);
-  width: var(--disable-btn-min-width);
-  padding: var(--disable-btn-padding);
-  border-radius: var(--disable-btn-border-radius);
-  background-color: var(--color-light);
-  color: #989898;
-  border: none;
-}
+// button:disabled {
+//   display: block;
+//   height: var(--disable-btn-height);
+//   width: var(--disable-btn-min-width);
+//   padding: var(--disable-btn-padding);
+//   border-radius: var(--disable-btn-border-radius);
+//   background-color: var(--color-light);
+//   color: #989898;
+//   border: none;
+// }
 
 /**========================================================================
    *                           Scroll bar

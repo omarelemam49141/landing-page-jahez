@@ -4,6 +4,8 @@ nav.navbar {
   z-index: 1050;
   transition: opacity 0.1s;
   max-height: 300px;
+  --navbar-height: 100px;
+  height: var(--navbar-height);
 }
 
 .navbar-nav .nav-link {
