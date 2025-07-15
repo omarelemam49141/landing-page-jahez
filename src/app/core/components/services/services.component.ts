@@ -7,13 +7,15 @@ import {
   ChangeDetectorRef,
   inject,
   OnInit,
+  NgZone,
 } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-gsap.registerPlugin(ScrollTrigger);
+// Declare global GSAP (loaded via angular.json scripts)
+declare const gsap: any;
+declare const ScrollTrigger: any;
+declare const SplitText: any;
 
 interface ServiceSlide {
   titleKey: string;
@@ -30,11 +32,17 @@ interface ServiceSlide {
 })
 export class ServicesComponent implements AfterViewInit, OnInit {
   @ViewChild('wrapper') wrapper!: ElementRef;
-  @ViewChild('images-container') imagesContainer!: ElementRef;
+  @ViewChild('imagesContainer') imagesContainer!: ElementRef;
+  @ViewChild('headerIcon1', { static: true }) headerIcon1!: ElementRef;
+  @ViewChild('headerIcon2', { static: true }) headerIcon2!: ElementRef;
+  @ViewChild('headerIcon3', { static: true }) headerIcon3!: ElementRef;
+  @ViewChild('imagesContainerMobile', { static: true }) imagesContainerMobile!: ElementRef;
+  @ViewChild('textSlider', { static: true }) textSlider!: ElementRef;
   //injection
   private langService = inject(LanguageService);
 
   //properties
+  private scrollTriggerInstance: any;
   isArabic!: boolean;
 
   carouselRotation = 0;
@@ -57,19 +65,169 @@ export class ServicesComponent implements AfterViewInit, OnInit {
   ];
 
   //life cycle
-  constructor(private cdr: ChangeDetectorRef) {}
+  constructor(private cdr: ChangeDetectorRef, private ngZone: NgZone) {}
   ngOnInit(): void {
     this.langService.isLangArabic.subscribe((isArabic) => {
       this.isArabic = isArabic;
       this.cdr.detectChanges();
     });
   }
+  
 
   ngAfterViewInit() {
-    this.animateCarousel();
+    this.ngZone.runOutsideAngular(() => {
+      setTimeout(() => {
+        // Register ScrollTrigger plugin
+        if (
+          typeof gsap !== 'undefined' &&
+          typeof ScrollTrigger !== 'undefined'
+        ) {
+          gsap.registerPlugin(ScrollTrigger);
+          console.log('GSAP and ScrollTrigger are available');
+        } else {
+          console.error('GSAP or ScrollTrigger not loaded');
+          return;
+        }
+
+        this.animateCarousel();
+        // Initialize ScrollTrigger last, after other animations
+        setTimeout(() => {
+          this.scrollTrigger();
+          // Refresh ScrollTrigger to ensure proper calculations
+          ScrollTrigger.refresh();
+        }, 200);
+      }, 100); // Increased delay to ensure DOM is ready
+    });
+    
+  }
+
+  ngOnDestroy(): void {
+    // Clean up ScrollTrigger instances to prevent memory leaks
+    if (this.scrollTriggerInstance) {
+      this.scrollTriggerInstance.kill();
+    }
+    if (typeof ScrollTrigger !== 'undefined') {
+      ScrollTrigger.getAll().forEach((trigger: any) => trigger.kill());
+    }
   }
 
   //methods
+  scrollTrigger(): void {
+    if (
+      !this.wrapper?.nativeElement 
+    ) {
+      console.error('Required elements not found for ScrollTrigger');
+      return;
+    }
+
+    // Verify ScrollTrigger is available
+    if (typeof ScrollTrigger === 'undefined') {
+      console.error('ScrollTrigger is not available');
+      return;
+    }
+    this.scrollTriggerBgIcons();
+    this.scrollTriggerImagesContainer();
+    this.scrollTriggerImagesContainerMobile();
+    this.scrollTriggerTextSlider();
+
+  }
+
+  scrollTriggerImagesContainerMobile(): void {
+    let start = 'top 100%';
+    let end = 'bottom 110%';
+    let imagesContainerMobileScrub = 0.5;
+    this.scrollTriggerInstance = gsap.from(this.imagesContainerMobile.nativeElement, {
+      y: '-300px', // Reduced distance for more visible effect
+      ease: 'none', // Better for scroll-linked animations
+      scrollTrigger: {
+        trigger: this.wrapper.nativeElement,
+        start: start, // Animation starts when header section enters viewport
+        end: end, // Animation ends when header section leaves viewport
+        scrub: imagesContainerMobileScrub, // Smooth scrubbing
+        // markers: true, // Keep markers for debugging
+      },
+    });
+
+  }
+
+  scrollTriggerTextSlider(): void {
+    let start = 'top 100%';
+    let end = 'bottom 110%';
+    let textSliderScrub = 0.5;
+    gsap.set(this.textSlider.nativeElement, {
+      transformOrigin: 'left center',
+    });
+    this.scrollTriggerInstance = gsap.from(this.textSlider.nativeElement, {
+      rotateY: '180deg', // Reduced distance for more visible effect
+      ease: 'none', // Better for scroll-linked animations
+      scrollTrigger: {
+        trigger: this.wrapper.nativeElement,
+        start: start, // Animation starts when header section enters viewport
+        end: end, // Animation ends when header section leaves viewport
+        scrub: textSliderScrub, // Smooth scrubbing
+        // markers: true, // Keep markers for debugging
+      },
+    });
+  }
+
+  scrollTriggerImagesContainer(): void {
+    let start = 'top 100%';
+    let end = 'bottom 100%';
+    let imagesContainerMobileScrub = 0.5;
+    this.scrollTriggerInstance = gsap.from(this.imagesContainer.nativeElement, {
+      y: '300px', // Reduced distance for more visible effect
+      ease: 'none', // Better for scroll-linked animations
+      scrollTrigger: {
+        trigger: this.wrapper.nativeElement,
+        start: start, // Animation starts when header section enters viewport
+        end: end, // Animation ends when header section leaves viewport
+        scrub: imagesContainerMobileScrub, // Smooth scrubbing
+        // markers: true, // Keep markers for debugging
+      },
+    });
+  }
+
+  scrollTriggerBgIcons(): void {
+    let start = 'top 100%';
+    let end = 'bottom 100%';
+    let bgIconsScrub = 0.5;
+    this.scrollTriggerInstance = gsap.from(this.headerIcon1.nativeElement, {
+      y: '-300px', // Reduced distance for more visible effect
+      ease: 'none', // Better for scroll-linked animations
+      scrollTrigger: {
+        trigger: this.wrapper.nativeElement,
+        start: start, // Animation starts when header section enters viewport
+        end: end, // Animation ends when header section leaves viewport
+        scrub: bgIconsScrub, // Smooth scrubbing
+        // markers: true, // Keep markers for debugging
+      },
+    });
+
+    this.scrollTriggerInstance = gsap.from(this.headerIcon2.nativeElement, {
+      x: '-300px', // Reduced distance for more visible effect
+      ease: 'none', // Better for scroll-linked animations
+      scrollTrigger: {
+        trigger: this.wrapper.nativeElement,
+        start: start, // Animation starts when header section enters viewport
+        end: end, // Animation ends when header section leaves viewport
+        scrub: bgIconsScrub, // Smooth scrubbing
+        // markers: true, // Keep markers for debugging
+      },
+    });
+
+    this.scrollTriggerInstance = gsap.from(this.headerIcon3.nativeElement, {
+      y: '300px', // Reduced distance for more visible effect
+      ease: 'none', // Better for scroll-linked animations
+      scrollTrigger: {
+        trigger: this.wrapper.nativeElement,
+        start: start, // Animation starts when header section enters viewport
+        end: end, // Animation ends when header section leaves viewport
+        scrub: bgIconsScrub, // Smooth scrubbing
+        // markers: true, // Keep markers for debugging
+      },
+    });
+  }
+
   animateCarousel() {
     const colors = [
       "#24478f",
@@ -96,11 +254,11 @@ export class ServicesComponent implements AfterViewInit, OnInit {
 
     /* start images slider */
     const images = gsap.utils.toArray(".images-container");
-    const imagesArray = images.map((slider) =>
+    const imagesArray = images.map((slider: any) =>
       gsap.utils.toArray(".images-slide", slider as HTMLElement)
     );
-    imagesArray.forEach((slides) => {
-      slides.forEach((slide, i) => {
+    imagesArray.forEach((slides: any) => {
+      slides.forEach((slide: any, i: any) => {
         switch (i) {
           case 0:
             gsap.set(slide as HTMLElement, {
@@ -130,15 +288,16 @@ export class ServicesComponent implements AfterViewInit, OnInit {
       const first = imagesArray[0];
       const currentSlides: HTMLElement[] = [];
       const nextSlides: HTMLElement[] = [];
-      imagesArray.forEach((slides) => currentSlides.push(slides[currentImageIndex] as HTMLElement));
+      imagesArray.forEach((slides: any) => currentSlides.push(slides[currentImageIndex] as HTMLElement));
       if (first[currentImageIndex + value]) {
         currentImageIndex += value;
       } else {
         currentImageIndex = value > 0 ? 0 : first.length - 1;
       }
+
       
-      imagesArray.forEach((slides) => {
-        slides.forEach((slide, i) => {
+      imagesArray.forEach((slides: any) => {
+        slides.forEach((slide: any, i: any) => {
           switch (i) {
             /* start first image */
             case 0:
@@ -373,12 +532,11 @@ export class ServicesComponent implements AfterViewInit, OnInit {
 
     /* start text slider */
     const sliders = gsap.utils.toArray(".slider");
-    const slidesArray = sliders.map((slider) =>
+    const slidesArray = sliders.map((slider: any) =>
       gsap.utils.toArray(".slide", slider as HTMLElement)
     );
-
-    slidesArray.forEach((slides) => {
-      slides.forEach((slide, i) => {
+    slidesArray.forEach((slides: any) => {
+      slides.forEach((slide: any, i: any) => {
         gsap.set(slide as HTMLElement, {
           xPercent: i > 0 ? 100 : undefined
         });
@@ -391,13 +549,13 @@ export class ServicesComponent implements AfterViewInit, OnInit {
       const first = slidesArray[0];
       const currentSlides: HTMLElement[] = [];
       const nextSlides: HTMLElement[] = [];
-      slidesArray.forEach((slides) => currentSlides.push(slides[currentIndex] as HTMLElement));
+      slidesArray.forEach((slides: any) => currentSlides.push(slides[currentIndex] as HTMLElement));
       if (first[currentIndex + value]) {
         currentIndex += value;
       } else {
         currentIndex = value > 0 ? 0 : first.length - 1;
       }
-      slidesArray.forEach((slides) => nextSlides.push(slides[currentIndex] as HTMLElement));
+      slidesArray.forEach((slides: any) => nextSlides.push(slides[currentIndex] as HTMLElement));
       if (value > 0) {
         gsap.from(nextSlides as unknown as HTMLElement, { xPercent: 100 });
         gsap.to(currentSlides as unknown as HTMLElement, {
@@ -417,12 +575,12 @@ export class ServicesComponent implements AfterViewInit, OnInit {
 
     /* start images slider mobile */
     const imagesMobile = gsap.utils.toArray(".images-container-mobile");
-    const imagesArrayMobile = imagesMobile.map((slider) =>
+    const imagesArrayMobile = imagesMobile.map((slider: any) =>
       gsap.utils.toArray(".image-slide", slider as HTMLElement)
     );
 
-    imagesArrayMobile.forEach((slides) => {
-      slides.forEach((slide, i) => {
+    imagesArrayMobile.forEach((slides: any) => {
+      slides.forEach((slide: any, i: any) => {
         gsap.set(slide as HTMLElement, {
           xPercent: i > 0 ? 100 : undefined
         });
@@ -435,13 +593,14 @@ export class ServicesComponent implements AfterViewInit, OnInit {
       const first = imagesArrayMobile[0];
       const currentSlides: HTMLElement[] = [];
       const nextSlides: HTMLElement[] = [];
-      imagesArrayMobile.forEach((slides) => currentSlides.push(slides[currentImageIndexMobile] as HTMLElement));
+      imagesArrayMobile.forEach((slides: any) => currentSlides.push(slides[currentImageIndexMobile] as HTMLElement));
       if (first[currentImageIndexMobile + value]) {
         currentImageIndexMobile += value;
       } else {
         currentImageIndexMobile = value > 0 ? 0 : first.length - 1;
       }
-      imagesArrayMobile.forEach((slides) => nextSlides.push(slides[currentImageIndexMobile] as HTMLElement));
+      
+      imagesArrayMobile.forEach((slides: any) => nextSlides.push(slides[currentImageIndexMobile] as HTMLElement));
       if (value > 0) {
         gsap.from(nextSlides as unknown as HTMLElement, { xPercent: 100 });
         gsap.to(currentSlides as unknown as HTMLElement, {

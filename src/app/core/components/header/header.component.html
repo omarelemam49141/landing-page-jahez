@@ -1,9 +1,20 @@
-<section class="header-section d-flex align-items-center justify-content-between flex-wrap-reverse">
+<section #headerSection class="header-section d-flex align-items-center justify-content-between flex-wrap-reverse">
+  <!--start bg icons-->
+  <div class="header-icons">
+    <img #headerIcon1 class="header-icon1" src="assets/images/pages/icons/header1.svg" alt="Jahez App" />
+    <img #headerIcon2 class="header-icon2" src="assets/images/pages/icons/header2.svg" alt="Jahez App" />
+    <img #headerIcon3 class="header-icon3" src="assets/images/pages/icons/header3.svg" alt="Jahez App" />
+  </div>
+  <!--end bg icons-->
   <div class="header-text" #headerText>
     <h1 #headerTitle>{{'HEADER.TITLE' | translate}}</h1>
     <p>{{'HEADER.SUBTITLE' | translate}}</p>
   </div>
   <div class="header-image" #headerImage>
-    <img src="assets/images/pages/images/service1.jpeg" alt="Jahez App" />
+    <img class="bg-image" src="assets/images/pages/images/mobile-bg-header.webp" alt="Jahez App" />
+    <div class="page">
+      <img #page1 class="page-1" src="assets/images/pages/images/mobile-page-header1.webp" alt="Jahez App" />
+      <img #page2 class="page-2" src="assets/images/pages/images/mobile-page-header2.png" alt="Jahez App" />
+    </div>
   </div>
 </section>

@@ -1,5 +1,13 @@
-<div @wrapper class="wrapper d-flex gap-4 flex-column flex-lg-row flex-lg-nowrap justify-content-center align-items-center">
-  <div @images-container class="images-container slider-two d-none d-lg-flex">
+<div #wrapper class="wrapper d-flex gap-4 flex-column flex-lg-row flex-lg-nowrap justify-content-center align-items-center">
+  <!--start bg icons-->
+  <div class="header-icons">
+    <img #headerIcon1 class="header-icon1" src="assets/images/pages/icons/header1.svg" alt="Jahez App" />
+    <img #headerIcon2 class="header-icon2" src="assets/images/pages/icons/header2.svg" alt="Jahez App" />
+    <img #headerIcon3 class="header-icon3" src="assets/images/pages/icons/header3.svg" alt="Jahez App" />
+  </div>
+  <!--end bg icons-->
+  
+  <div #imagesContainer class="images-container slider-two d-none d-lg-flex">   
     <img class="images-slide" src="assets/images/pages/images/service1.jpeg" alt="image">
 
       <img class="images-slide" src="assets/images/pages/images/service2.jpeg" alt="image">
@@ -9,7 +17,7 @@
 
   </div>
 
-  <div @images-container-mobile class="images-container-mobile slider-two d-flex d-lg-none w-100 mt-5">
+  <div #imagesContainerMobile class="images-container-mobile slider-two d-flex d-lg-none w-100 mt-5">
     <div class="image-slide">
 
       <img src="assets/images/pages/images/service1.jpeg" alt="image">
@@ -24,7 +32,7 @@
     </div>
   </div>
 
-  <div class="text-slider">
+  <div #textSlider class="text-slider">
     <div class="slider slider-one">
         <div class="slide d-flex flex-column justify-content-center align-items-center">
           <h2 class="fs-20 fw-bold">{{"Who is ready" | translate}}</h2>
