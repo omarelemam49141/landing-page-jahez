@@ -72,7 +72,6 @@ export class ServicesComponent implements AfterViewInit, OnInit {
       this.cdr.detectChanges();
     });
   }
-  
 
   ngAfterViewInit() {
     this.ngZone.runOutsideAngular(() => {
@@ -229,14 +228,6 @@ export class ServicesComponent implements AfterViewInit, OnInit {
   }
 
   animateCarousel() {
-    const colors = [
-      "#24478f",
-      "#cc0000",
-      "#663300",
-      "#006600",
-      "#cc5200",
-      "#6b00b3"
-    ];
     const next = document.getElementById("next");
     const prev = document.getElementById("prev");
 

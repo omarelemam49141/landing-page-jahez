@@ -1,20 +1,24 @@
-import { Component, inject } from '@angular/core';
+import {
+  Component,
+  inject,
+  OnInit,
+  OnDestroy,
+  AfterViewInit,
+} from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { sharedImports } from './shared/imports/sharedImports';
 import { LanguageService } from './shared/services/language.service';
-import { ThemeGearboxComponent } from './shared/components/theme-gearbox/theme-gearbox.component';
 import { ThemeService } from './shared/services/themes.service';
-import { NavbarComponent } from './core/components/navbar/navbar.component';
-import { HeaderComponent } from './core/components/header/header.component';
+declare const LocomotiveScroll: any;
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [sharedImports, ThemeGearboxComponent, NavbarComponent, HeaderComponent],
+  imports: [sharedImports],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
 })
-export class AppComponent {
+export class AppComponent implements AfterViewInit {
   //properties
   title = 'embeded-store-front';
 
@@ -28,17 +32,20 @@ export class AppComponent {
     this.themeService.loadTheme();
     this.addSupportedLanguages();
     this.setDefaultLanguage('en');
-    let currLang = this.languageService.getCurrentLang()
+    let currLang = this.languageService.getCurrentLang();
     if (!currLang) {
       this.useLanguageAccordingToBrowserPreference();
     } else {
       this.translateService.use(currLang);
     }
   }
+  ngAfterViewInit(): void {
+   
+  }
 
   //methods
   changeLanguage(): void {
-    if(this.languageService.getCurrentLang() == 'en') {
+    if (this.languageService.getCurrentLang() == 'en') {
       this.languageService.changeCurrentLang('ar');
     } else {
       this.languageService.changeCurrentLang('en');

@@ -33,12 +33,14 @@
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
               "src/assets/styles/themes.scss",
+              "node_modules/locomotive-scroll/dist/locomotive-scroll.min.css",
               "src/styles.scss"
             ],
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
               "node_modules/gsap/dist/all.js",
-              "node_modules/@fortawesome/fontawesome-free/js/all.min.js"
+              "node_modules/@fortawesome/fontawesome-free/js/all.min.js",
+              "node_modules/locomotive-scroll/dist/locomotive-scroll.min.js"
             ]
           },
           "configurations": {
