@@ -49,5 +49,39 @@
     }
   },
   "Who is ready": "Who is ready?",
-  "who-is-ready-desc": "Jahez is a Saudi Platform that specializes in delivering restaurant orders online. Because quality is our standard, we are keen at Jahez to provide a unique customer experience"
+  "who-is-ready-desc": "Jahez is a Saudi Platform that specializes in delivering restaurant orders online. Because quality is our standard, we are keen at Jahez to provide a unique customer experience",
+  "JOIN_US": {
+    "TITLE": "Join Us",
+    "DESC": "We are happy to welcome service providers (partners, productive families). Join us now (in Saudi Arabia only)",
+    "BUTTON": "Join Now",
+    "PRIVACY": "Privacy Policy",
+    "TERMS": "Terms of Use"
+  },
+  "FAQ": {
+    "TITLE": "Frequently Asked Questions",
+    "SUBTITLE": "Feel free to contact us",
+    "FORM_PROMPT": "Have another question? Don’t hesitate to ask us now!",
+    "NAME": "Your Name",
+    "EMAIL": "Your email or Twitter account",
+    "MESSAGE": "Write here...",
+    "SUBMIT": "Send",
+    "QUESTIONS": [
+      {
+        "Q": "How to use Apple Pay?",
+        "A": "Follow these steps: 1- Update your device to the latest version 2- Create an order and you can activate Apple Pay service by choosing the payment method (Apple Pay or Cash) and sending the order to the restaurant 3- After the order is accepted, you can choose the payment method from the order tracking page and click on Apple Pay 4- The amount will be deducted and the process will be successful."
+      },
+      {
+        "Q": "Delete credit card",
+        "A": "Follow these steps: 1- Update your device to the latest version 2- Create an order and you can activate Apple Pay service by choosing the payment method (Apple Pay or Cash) and sending the order to the restaurant 3- After the order is accepted, you can choose the payment method from the order tracking page and click on Apple Pay 4- The amount will be deducted and the process will be successful."
+      },
+      {
+        "Q": "Facilitate PIN code",
+        "A": "Follow these steps: 1- Update your device to the latest version 2- Create an order and you can activate Apple Pay service by choosing the payment method (Apple Pay or Cash) and sending the order to the restaurant 3- After the order is accepted, you can choose the payment method from the order tracking page and click on Apple Pay 4- The amount will be deducted and the process will be successful."
+      },
+      {
+        "Q": "Use balance",
+        "A": "Follow these steps: 1- Update your device to the latest version 2- Create an order and you can activate Apple Pay service by choosing the payment method (Apple Pay or Cash) and sending the order to the restaurant 3- After the order is accepted, you can choose the payment method from the order tracking page and click on Apple Pay 4- The amount will be deducted and the process will be successful."
+      }
+    ]
+  }
 }

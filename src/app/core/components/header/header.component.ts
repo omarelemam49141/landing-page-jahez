@@ -5,8 +5,11 @@ import {
   ViewChild,
   NgZone,
   OnDestroy,
+  OnInit,
+  inject,
 } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
+import { LanguageService } from '../../../shared/services/language.service';
 
 // Declare global GSAP (loaded via angular.json scripts)
 declare const gsap: any;
@@ -20,7 +23,7 @@ declare const SplitText: any;
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
-export class HeaderComponent implements AfterViewInit, OnDestroy {
+export class HeaderComponent implements AfterViewInit, OnDestroy, OnInit {
   //view childs
   @ViewChild('headerText', { static: true }) headerTextRef!: ElementRef;
   @ViewChild('headerImage', { static: true }) headerImageRef!: ElementRef;
@@ -32,11 +35,21 @@ export class HeaderComponent implements AfterViewInit, OnDestroy {
   @ViewChild('headerIcon2', { static: true }) headerIcon2!: ElementRef;
   @ViewChild('headerIcon3', { static: true }) headerIcon3!: ElementRef;
 
+  //injection
+  private languageService = inject(LanguageService);
+
   //properties
   private scrollTriggerInstance: any;
+  isArabic!: boolean;
 
   //lifecycle hooks
   constructor(private ngZone: NgZone) {}
+  
+  ngOnInit(): void {
+    this.languageService.isLangArabic.subscribe((isArabic) => {
+      this.isArabic = isArabic;
+    });
+  }
 
   ngAfterViewInit(): void {
     this.ngZone.runOutsideAngular(() => {
@@ -47,7 +60,6 @@ export class HeaderComponent implements AfterViewInit, OnDestroy {
           typeof ScrollTrigger !== 'undefined'
         ) {
           gsap.registerPlugin(ScrollTrigger);
-          console.log('GSAP and ScrollTrigger are available');
         } else {
           console.error('GSAP or ScrollTrigger not loaded');
           return;
@@ -56,13 +68,10 @@ export class HeaderComponent implements AfterViewInit, OnDestroy {
         this.animateTitle();
         this.animateSubtitle();
         this.animateImage();
-        // Initialize ScrollTrigger last, after other animations
-        setTimeout(() => {
-          this.scrollTrigger();
-          // Refresh ScrollTrigger to ensure proper calculations
-          ScrollTrigger.refresh();
-        }, 200);
-      }, 100); // Increased delay to ensure DOM is ready
+        
+        // Initialize ScrollTrigger (Locomotive Scroll is already ready at this point)
+        this.scrollTrigger();
+      }, 100);
     });
   }
 
@@ -81,7 +90,11 @@ export class HeaderComponent implements AfterViewInit, OnDestroy {
     // Ensure elements exist before creating ScrollTrigger
     if (
       !this.page2Ref?.nativeElement ||
-      !this.headerSectionRef?.nativeElement
+      !this.headerSectionRef?.nativeElement ||
+      !this.headerTextRef?.nativeElement ||
+      !this.headerIcon1?.nativeElement ||
+      !this.headerIcon2?.nativeElement ||
+      !this.headerIcon3?.nativeElement
     ) {
       console.error('Required elements not found for ScrollTrigger');
       return;
@@ -93,26 +106,36 @@ export class HeaderComponent implements AfterViewInit, OnDestroy {
       return;
     }
 
-    this.scrollTriggerModbilePages();
+    // Verify GSAP is available
+    if (typeof gsap === 'undefined') {
+      console.error('GSAP is not available');
+      return;
+    }
 
+    this.scrollTriggerModbilePages();
     this.scrollTriggerBgIcons();
     this.scrollTriggerHeaderText();
   }
 
   scrollTriggerHeaderText(): void {
+    gsap.set(this.headerTextRef.nativeElement, {
+      transformOrigin: this.isArabic ? 'right center' : 'left center',
+    });
     let headerTextScrub = 1;
     this.scrollTriggerInstance = gsap.to(this.headerTextRef.nativeElement, {
       opacity: 0,
-      rotationY: -180,
+      rotationY: this.isArabic ? -180 : 180,
       ease: 'none', // Better for scroll-linked animations
       scrollTrigger: {
         trigger: this.headerSectionRef.nativeElement,
         start: 'top top', // Animation starts when header section enters viewport
         end: 'bottom top', // Animation ends when header section leaves viewport
         scrub: headerTextScrub, // Smooth scrubbing
+        scroller: '.page-container'
         // markers: true, // Keep markers for debugging
       },
     });
+    console.log('HeaderComponent: Header text ScrollTrigger created:', this.scrollTriggerInstance);
   }
 
   scrollTriggerBgIcons(): void {
@@ -125,9 +148,11 @@ export class HeaderComponent implements AfterViewInit, OnDestroy {
         start: 'top top', // Animation starts when header section enters viewport
         end: 'bottom top', // Animation ends when header section leaves viewport
         scrub: bgIconsScrub, // Smooth scrubbing
+        scroller: '.page-container'
         // markers: true, // Keep markers for debugging
       },
     });
+    console.log('HeaderComponent: Header icon 1 ScrollTrigger created:', this.scrollTriggerInstance);
 
     this.scrollTriggerInstance = gsap.to(this.headerIcon2.nativeElement, {
       left: '-50%', // Reduced distance for more visible effect
@@ -137,9 +162,11 @@ export class HeaderComponent implements AfterViewInit, OnDestroy {
         start: 'top top', // Animation starts when header section enters viewport
         end: 'bottom top', // Animation ends when header section leaves viewport
         scrub: bgIconsScrub, // Smooth scrubbing
+        scroller: '.page-container'
         // markers: true, // Keep markers for debugging
       },
     });
+    console.log('HeaderComponent: Header icon 2 ScrollTrigger created:', this.scrollTriggerInstance);
 
     this.scrollTriggerInstance = gsap.to(this.headerIcon3.nativeElement, {
       bottom: '-50%', // Reduced distance for more visible effect
@@ -149,9 +176,11 @@ export class HeaderComponent implements AfterViewInit, OnDestroy {
         start: 'top top', // Animation starts when header section enters viewport
         end: 'bottom top', // Animation ends when header section leaves viewport
         scrub: bgIconsScrub, // Smooth scrubbing
+        scroller: '.page-container'
         // markers: true, // Keep markers for debugging
       },
     });
+    console.log('HeaderComponent: Header icon 3 ScrollTrigger created:', this.scrollTriggerInstance);
   }
 
   scrollTriggerModbilePages(): void {
@@ -163,9 +192,11 @@ export class HeaderComponent implements AfterViewInit, OnDestroy {
         start: 'top top', // Animation starts when header section enters viewport
         end: 'bottom top', // Animation ends when header section leaves viewport
         scrub: 1, // Smooth scrubbing
+        scroller: '.page-container'
         // markers: true, // Keep markers for debugging
       },
     });
+    console.log('HeaderComponent: Page 2 ScrollTrigger created:', this.scrollTriggerInstance);
 
     this.scrollTriggerInstance = gsap.to(this.page1Ref.nativeElement, {
       y: '+=1000px', // Reduced distance for more visible effect
@@ -175,9 +206,11 @@ export class HeaderComponent implements AfterViewInit, OnDestroy {
         start: 'top top', // Animation starts when header section enters viewport
         end: 'bottom top', // Animation ends when header section leaves viewport
         scrub: 1, // Smooth scrubbing
+        scroller: '.page-container'
         // markers: true, // Keep markers for debugging
       },
     });
+    console.log('HeaderComponent: Page 1 ScrollTrigger created:', this.scrollTriggerInstance);
     /* end scroll mobile pages */
   }
 

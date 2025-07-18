@@ -112,8 +112,9 @@ export class FeaturesComponent implements AfterViewInit, OnInit {
       
     }, 0)
     .to(this.carousel.nativeElement, {
-      right: '50%',
-      x: '50%',
+      right: this.isArabic ? '50%' : 'unset',
+      left: this.isArabic ? 'unset' : '50%',
+      x: this.isArabic ? '50%' : '-50%',
       duration: 4,
       ease: 'ease.out',
       scale: 1.15
@@ -122,7 +123,7 @@ export class FeaturesComponent implements AfterViewInit, OnInit {
     ScrollTrigger.create({
       trigger: '.features-section:not(.small-features-section)',
       start: 'top -50px',
-      end: 'bottom -200%',
+      end: '+=300%',
       scrub: 0.5,
       pin: true,
       animation: tl,

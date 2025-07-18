@@ -15,18 +15,12 @@
   margin-bottom: 60px;
 
   .main-title {
-    font-size: 3rem;
     font-weight: bold;
     margin-bottom: 16px;
     color: #fff;
-
-    @media (max-width: 768px) {
-      font-size: 2.2rem;
-    }
   }
 
   .subtitle {
-    font-size: 1.4rem;
     color: #fff;
     opacity: 0.9;
     margin-bottom: 0;

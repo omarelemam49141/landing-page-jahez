@@ -1,6 +1,10 @@
-<div>
-  <app-navbar></app-navbar>
-  <app-header></app-header>
-  <app-services></app-services>
-  <app-features></app-features>
+<div class="page-container">
+  @if (isLocomotiveReady) {
+    <app-navbar></app-navbar>
+    <app-header></app-header>
+    <app-services></app-services>
+    <app-features></app-features>
+    <app-join-us></app-join-us>
+    <app-faqs></app-faqs>
+  }
 </div>

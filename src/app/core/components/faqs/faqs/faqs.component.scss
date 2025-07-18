@@ -1,0 +1,126 @@
+// Container
+.faqs-container {
+  overflow: hidden;
+  min-height: 70vh;
+  padding: 40px 0 0 0;
+  @media (max-width: 991px) {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    padding: 20px 0 0 0;
+  }
+}
+
+//header
+.header {
+  .faqs-title {
+    margin-bottom: 0.5rem;
+  }
+  .faqs-subtitle {
+    color: #222;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.faqs-body {
+  perspective: 300px;
+}
+
+// Form
+.faqs-form {
+  flex-basis: 50%;
+  padding: 0 24px;
+  @media (min-width: 992px) {
+    border-left: 1px solid #eee;
+    margin-left: 0;
+  }
+  
+  .faqs-form-prompt {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+  }
+  form {
+    width: 100% !important;
+      max-width: 100% !important;
+    input, textarea {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-size: 1rem;
+      padding: 10px 16px;
+      color: #222;
+      
+      &::placeholder {
+        color: #bbb;
+        opacity: 1;
+      }
+    }
+    textarea {
+      resize: none;
+    }
+    button {
+      font-size: 1.1rem;
+      font-weight: 600;
+      border-radius: 6px;
+      min-width: 120px;
+    }
+  }
+}
+
+// FAQ List
+.faqs-list {
+  padding: 0 24px;
+  flex-basis: 50%;
+  @media (min-width: 992px) {
+    padding-right: 40px;
+    padding-left: 0;
+  }
+  .faq-item {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: none;
+    border: none;
+    .faq-question {
+      cursor: pointer;
+      color: #222;
+      border-bottom: 1px solid #eee;
+      transition: background 0.2s;
+      .faq-icon {
+        transition: transform 0.2s;
+        &.rotate {
+          transform: rotate(180deg);
+        }
+      }
+    }
+    .faq-answer {
+      height: 0;
+      color: #444;
+      border-radius: 0 0 8px 8px;
+      border-top: none;
+      margin-top: -2px;
+      margin-bottom: 8px;
+    }
+  }
+}
+
+// RTL support
+:host-context([dir="rtl"]) .faqs-container {
+  direction: rtl;
+  .faqs-form {
+    align-items: flex-end !important;
+    form {
+      text-align: right;
+    }
+  }
+  .faqs-list {
+    align-items: flex-start !important;
+    .faq-question, .faq-answer {
+      text-align: right;
+    }
+  }
+}
+
+// General
+.pointer {
+  cursor: pointer;
+}
