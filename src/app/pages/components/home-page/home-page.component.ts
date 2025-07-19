@@ -20,7 +20,7 @@ declare const LocomotiveScroll: any;
     ServicesComponent,
     FeaturesComponent,
     JoinUsComponent,
-    FaqsComponent
+    FaqsComponent,
   ],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.scss',
@@ -39,33 +39,30 @@ export class HomePageComponent implements AfterViewInit {
         console.error('HomePageComponent: LocomotiveScroll is not loaded');
         return;
       }
-      
+
       if (typeof ScrollTrigger === 'undefined') {
         console.error('HomePageComponent: ScrollTrigger is not loaded');
         return;
       }
-      
+
       if (typeof gsap === 'undefined') {
         console.error('HomePageComponent: GSAP is not loaded');
         return;
       }
-      
+
       console.log('HomePageComponent: All required libraries are loaded');
-      
+
       // Initialize Locomotive Scroll
       this.configureLocomotiveScroll();
     }, 100);
   }
 
   private configureLocomotiveScroll(): void {
-    console.log('HomePageComponent: Configuring Locomotive Scroll...');
-    
     const pageContainer = document.querySelector('.page-container');
     if (!pageContainer) {
-      console.error('HomePageComponent: .page-container element not found');
       return;
     }
-    
+
     this.locoScroll = new LocomotiveScroll({
       el: pageContainer,
       smooth: true,
@@ -73,18 +70,19 @@ export class HomePageComponent implements AfterViewInit {
       multiplier: 1.2, // Scroll speed multiplier
       smartphone: {
         smooth: true,
-        lerp: 0.05 // Even faster stopping on mobile
+        lerp: 0.05, // Even faster stopping on mobile
       },
       tablet: {
         smooth: true,
-        lerp: 0.05 // Even faster stopping on tablet
-      }
+        lerp: 0.05, // Even faster stopping on tablet
+      },
     });
-    
+
     // each time Locomotive Scroll updates, tell ScrollTrigger to update too (sync positioning)
     this.locoScroll.on('scroll', ScrollTrigger.update);
 
-    // tell ScrollTrigger to use these proxy methods for the ".page-container" element since Locomotive Scroll is hijacking things
+    // tell ScrollTrigger to use these proxy methods for the ".page-container" 
+    // element since Locomotive Scroll is hijacking things
     ScrollTrigger.scrollerProxy('.page-container', {
       scrollTop: (value: any) => {
         return arguments.length
@@ -99,7 +97,11 @@ export class HomePageComponent implements AfterViewInit {
           height: window.innerHeight,
         };
       },
-      // LocomotiveScroll handles things completely differently on mobile devices - it doesn't even transform the container at all! So to get the correct behavior and avoid jitters, we should pin things with position: fixed on mobile. We sense it by checking to see if there's a transform applied to the container (the LocomotiveScroll-controlled element).
+      // LocomotiveScroll handles things completely differently on mobile devices 
+      // - it doesn't even transform the container at all! So to get the correct behavior 
+      // and avoid jitters, we should pin things with position: fixed on mobile. 
+      // We sense it by checking to see if there's a transform applied to the container 
+      // (the LocomotiveScroll-controlled element).
       pinType: (document.querySelector('.page-container') as HTMLElement).style
         ?.transform
         ? 'transform'
@@ -109,12 +111,11 @@ export class HomePageComponent implements AfterViewInit {
     // each time the window updates, we should refresh ScrollTrigger and then update LocomotiveScroll.
     ScrollTrigger.addEventListener('refresh', () => this.locoScroll.update());
     ScrollTrigger.defaults({ scroller: '.page-container' });
-    
+
     // Notify service when Locomotive Scroll is ready
     setTimeout(() => {
       ScrollTrigger.refresh();
       this.isLocomotiveReady = true;
-      console.log('HomePageComponent: Locomotive Scroll ready');
     }, 100);
     // --- SETUP END ---
   }
