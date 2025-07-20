@@ -1,5 +1,6 @@
 
 .wrapper {
+  background: var(--color-secondary);
   direction: rtl;
   width: 100%;
   height: 100vh;
@@ -14,6 +15,10 @@
     width: 100%;
     height: 100%;
     z-index: -1;
+    img {
+      width: 250px;
+      filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.2));
+    }
     .header-icon1 {
       position: absolute;
       top: 0;
@@ -72,7 +77,7 @@
   justify-content: center;
   align-items: center;
   h2 {
-    color: #e23243;
+    color: var(--color-primary-light);
     transform-origin: ("50%", "50%", "50px");
   }
   p {
@@ -91,7 +96,9 @@ button {
   cursor: pointer;
   font-weight: 600;
   margin: 0 10px;
-  background-color: none;
+  color: var(--color-secondary);
+  border-radius: 5px;
+  background-color: var(--color-primary-light);
   border: none;
 }
 
@@ -129,7 +136,7 @@ button {
   justify-content: center;
   align-items: center;
   h2 {
-    color: #e23243;
+    color: var(--color-primary-light);
     transform-origin: ("50%", "50%", "50px");
   }
   p {

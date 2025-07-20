@@ -3,7 +3,7 @@
 .join-us-container {
   direction: rtl;
   text-align: center;
-  background: #f7f7f7;
+  background: var(--color-secondary);
   padding: 48px 0 32px 0;
   border-radius: 8px;
   margin: 0 auto;
@@ -12,7 +12,7 @@
 }
 
 .join-us-title {
-  color: #e23243;
+  color: var(--color-primary-light);
   margin-bottom: 12px;
   
   .fire-flame {
@@ -22,13 +22,13 @@
 }
 
 .join-us-desc {
-  color: #222;
+  color: var(--text-primary);
   margin-bottom: 24px;
 }
 .btns {
   perspective: 300px;
   .join-us-btn {
-    background: #e23243;
+    background: var(--color-primary-light);
     color: #fff;
     border: none;
     border-radius: 6px;
@@ -40,7 +40,7 @@
   }
   
   .join-us-btn:hover {
-    background: #b71c2b;
+    background: var(--color-primary);
   }
 }
 

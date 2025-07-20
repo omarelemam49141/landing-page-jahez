@@ -5,13 +5,20 @@ $text-color: #212529;
 
 .theme-default {
   /* start main colors */
-  --color-primary: #023d59;
+  --color-primary: #4C214D;
+  --color-primary-light: #8A3159;
   --color-dark: #6a6a6a;
   --color-light: #c0c1c0;
-  --color-secondary: #e5154f;
+  --color-secondary: #F0F0F0;
   --color-secondary-light: #f3dce3;
   --color-background: #ffffff;
   /* end main colors */
+
+  /* start text colors */
+  
+  --text-primary: #212529;
+  --text-secondary: #6C757D;
+  /* end text colors */
 
   /* start status colors */
   --status-confirmed: #023d59;

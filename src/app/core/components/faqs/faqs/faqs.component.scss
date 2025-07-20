@@ -14,9 +14,10 @@
 .header {
   .faqs-title {
     margin-bottom: 0.5rem;
+    color: var(--color-primary-light);
   }
   .faqs-subtitle {
-    color: #222;
+    color: var(--text-primary);
     margin-bottom: 1.5rem;
   }
 }
@@ -35,6 +36,7 @@
   }
   
   .faqs-form-prompt {
+    color: var(--color-primary-light);
     font-size: 1rem;
     font-weight: 500;
     margin-bottom: 1.5rem;
@@ -63,6 +65,8 @@
       font-weight: 600;
       border-radius: 6px;
       min-width: 120px;
+      background: var(--color-primary-light);
+      color: var(--color-secondary);
     }
   }
 }
@@ -82,11 +86,14 @@
     border: none;
     .faq-question {
       cursor: pointer;
-      color: #222;
       border-bottom: 1px solid #eee;
+      .question {
+        color: var(--text-primary);
+      }
       transition: background 0.2s;
       .faq-icon {
         transition: transform 0.2s;
+        color: var(--color-primary-light);
         &.rotate {
           transform: rotate(180deg);
         }
@@ -94,7 +101,7 @@
     }
     .faq-answer {
       height: 0;
-      color: #444;
+      color: var(--text-secondary);
       border-radius: 0 0 8px 8px;
       border-top: none;
       margin-top: -2px;

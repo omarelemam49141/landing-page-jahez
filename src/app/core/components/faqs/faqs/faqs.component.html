@@ -1,91 +1,98 @@
-<div
-  class="faqs-container"
->
-<div class="container">
-<!-- start header -->
-<div class="header text-center">
-  <h2 class="faqs-title text-center text-danger text-center fs-32">
-    {{ "FAQ.TITLE" | translate }}
-  </h2>
-  <div class="faqs-subtitle text-center fs-24">
-    {{ "FAQ.SUBTITLE" | translate }}
-  </div>
-</div>
-<!-- end header -->
+<div class="faqs-container">
+  <div class="container">
+    <!-- start header -->
+    <div class="header text-center">
+      <h2 class="faqs-title text-center fs-32">
+        {{ "FAQ.TITLE" | translate }}
+      </h2>
+      <div class="faqs-subtitle text-center fs-24">
+        {{ "FAQ.SUBTITLE" | translate }}
+      </div>
+    </div>
+    <!-- end header -->
 
-<div class="faqs-body d-flex flex-column-reverse flex-lg-row justify-content-between align-items-start">
- <!-- Left: Form -->
- <div
-   class="faqs-form d-flex flex-column align-items-center align-items-lg-end mb-5 mb-lg-0 w-100 justify-content-center"
- >
-   <div
-     class="faqs-form-prompt text-danger text-center text-lg-end mt-4 mb-2 mx-auto mx-lg-0"
-   >
-     {{ "FAQ.FORM_PROMPT" | translate }}
-   </div>
-   <form
-     [formGroup]="form"
-     (ngSubmit)="onSubmit()"
-     class="w-100"
-     style="max-width: 420px"
-   >
-     <input
-       type="text"
-       class="form-control mb-3"
-       [placeholder]="'FAQ.NAME' | translate"
-       formControlName="name"
-     />
-     <input
-       type="text"
-       class="form-control mb-3"
-       [placeholder]="'FAQ.EMAIL' | translate"
-       formControlName="email"
-     />
-     <textarea
-       rows="5"
-       class="form-control mb-3"
-       [placeholder]="'FAQ.MESSAGE' | translate"
-       formControlName="message"
-     ></textarea>
-     <div class="d-flex justify-content-center justify-content-lg-end">
-       <button
-         type="submit"
-         class="btn btn-danger px-5"
-         [disabled]="form.invalid"
-       >
-         {{ "FAQ.SUBMIT" | translate }}
-       </button>
-     </div>
-   </form>
- </div>
- <!-- Right: FAQ List -->
- <div
-   class="faqs-list d-flex flex-column align-items-center align-items-lg-start"
- >
-   <div *ngFor="let faq of faqs; let i = index" class="faq-item w-100 mb-2">
-     <div
-     (click)="toggleFaq(i)"
-       class="faq-question d-flex align-items-center justify-content-between py-2 px-2 border-bottom pointer"
-     >
-       <span class="fs-18 text-end">{{ faq.Q }}</span>
-       <span
-         class="faq-icon text-danger ms-2"
-         [ngClass]="{'rotate': expandedIndex === i}"
-       >
-         <svg width="18" height="18" viewBox="0 0 24 24">
-           <path
-             fill="currentColor"
-             d="M12 15.5q-.2 0-.375-.062T11.3 15.3l-5.6-5.6q-.275-.275-.275-.7t.275-.7q.275-.275.7-.275t.7.275L12 13.6l4.9-4.9q.275-.275.7-.275t.7.275q.275.275.275.7t-.275.7l-5.6 5.6q-.125.125-.3.188T12 15.5Z"
-           />
-         </svg>
-       </span>
-     </div>
-     <div class="faq-answer fs-16" #faqAnswer [style.overflow]="'hidden'" class="faq-answer-{{i}}">
-       <span class="text-end py-2 d-inline-block">{{ faq.A }}</span>
-     </div>
-   </div>
- </div>
-</div>
-</div>
-  
+    <div
+      class="faqs-body d-flex flex-column-reverse flex-lg-row justify-content-between align-items-start"
+    >
+      <!-- Left: Form -->
+      <div
+        class="faqs-form d-flex flex-column align-items-center align-items-lg-end mb-5 mb-lg-0 w-100 justify-content-center"
+      >
+        <div
+          class="faqs-form-prompt text-center text-lg-end mt-4 mb-2 mx-auto mx-lg-0"
+        >
+          {{ "FAQ.FORM_PROMPT" | translate }}
+        </div>
+        <form
+          [formGroup]="form"
+          (ngSubmit)="onSubmit()"
+          class="w-100"
+          style="max-width: 420px"
+        >
+          <input
+            type="text"
+            class="form-control mb-3"
+            [placeholder]="'FAQ.NAME' | translate"
+            formControlName="name"
+          />
+          <input
+            type="text"
+            class="form-control mb-3"
+            [placeholder]="'FAQ.EMAIL' | translate"
+            formControlName="email"
+          />
+          <textarea
+            rows="5"
+            class="form-control mb-3"
+            [placeholder]="'FAQ.MESSAGE' | translate"
+            formControlName="message"
+          ></textarea>
+          <div class="d-flex justify-content-center justify-content-lg-end">
+            <button
+              type="submit"
+              class="btn px-5"
+              [disabled]="form.invalid"
+            >
+              {{ "FAQ.SUBMIT" | translate }}
+            </button>
+          </div>
+        </form>
+      </div>
+      <!-- Right: FAQ List -->
+      <div
+        class="faqs-list d-flex flex-column align-items-center align-items-lg-start"
+      >
+        <div
+          *ngFor="let faq of faqs; let i = index"
+          class="faq-item w-100 mb-2"
+        >
+          <div
+            (click)="toggleFaq(i)"
+            class="faq-question d-flex align-items-center justify-content-between py-2 px-2 border-bottom pointer"
+          >
+            <span class="fs-18 text-end question">{{ faq.Q }}</span>
+            <span
+              class="faq-icon ms-2"
+              [ngClass]="{ rotate: expandedIndex === i }"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24">
+                <path
+                  fill="currentColor"
+                  d="M12 15.5q-.2 0-.375-.062T11.3 15.3l-5.6-5.6q-.275-.275-.275-.7t.275-.7q.275-.275.7-.275t.7.275L12 13.6l4.9-4.9q.275-.275.7-.275t.7.275q.275.275.275.7t-.275.7l-5.6 5.6q-.125.125-.3.188T12 15.5Z"
+                />
+              </svg>
+            </span>
+          </div>
+          <div
+            class="faq-answer fs-16"
+            #faqAnswer
+            [style.overflow]="'hidden'"
+            class="faq-answer-{{ i }}"
+          >
+            <span class="text-end py-2 d-inline-block answer">{{ faq.A }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
