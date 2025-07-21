@@ -74,7 +74,7 @@ export class FaqsComponent implements OnInit, AfterViewInit {
           start: this.startEndScrollTrigger,
           end: this.startEndScrollTrigger,
           // markers: true,
-          toggleActions: 'play play reverse reverse'
+          toggleActions: 'play none none reverse'
         }
       });
       tl.from(faqsForm, {
@@ -97,7 +97,7 @@ export class FaqsComponent implements OnInit, AfterViewInit {
           start: 'top 70%',
           end: 'bottom 70%',
           // markers: true,
-          toggleActions: 'play play reverse reverse'
+          toggleActions: 'play none none reverse'
         }
       });
       faqsFormTl.from(faqsForm, {
@@ -112,7 +112,7 @@ export class FaqsComponent implements OnInit, AfterViewInit {
           start: 'top 70%',
           end: 'bottom 70%',
           // markers: true,
-          toggleActions: 'play play reverse reverse'
+          toggleActions: 'play none none reverse'
         }
       });
       faqsListTl.from(faqsList, {

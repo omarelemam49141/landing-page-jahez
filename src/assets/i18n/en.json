@@ -82,11 +82,11 @@
   },
   "CONTACT_US": {
     "TITLE": "Contact Us",
-    "ADDRESS_LINE_1": "King Abdullah Road, Al-Waha,",
-    "ADDRESS_LINE_2": "Riyadh 12444, Saudi Arabia",
-    "EMAIL_ADDRESS": "info@jahez.net",
+    "EMAIL_ADDRESS": "m.alhabbah@info",
     "PHONE_NUMBER": "8001241220",
-    "DOWNLOAD_APP": "Download The App Now!"
+    "DOWNLOAD_APP": "Download The App Now!",
+    "SOCIAL_MEDIA_TITLE": "Social Media Accounts:",
+    "SOCIAL_MEDIA_HANDLE": "alhabbah_app@"
   },
   "FAQ": {
     "TITLE": "Frequently Asked Questions",
@@ -98,20 +98,36 @@
     "SUBMIT": "Send",
     "QUESTIONS": [
       {
-        "Q": "How to use Apple Pay?",
-        "A": "Follow these steps: 1- Update your device to the latest version 2- Create an order and you can activate Apple Pay service by choosing the payment method (Apple Pay or Cash) and sending the order to the restaurant 3- After the order is accepted, you can choose the payment method from the order tracking page and click on Apple Pay 4- The amount will be deducted and the process will be successful."
+        "Q": "What is the Alheba app?",
+        "A": "Alheba is an app that allows users to discover the latest and trending restaurants, cafes, products, and trending videos, based on the user's location and interests, to provide them with a fresh, trending experience at all times."
       },
       {
-        "Q": "Delete credit card",
-        "A": "Follow these steps: 1- Update your device to the latest version 2- Create an order and you can activate Apple Pay service by choosing the payment method (Apple Pay or Cash) and sending the order to the restaurant 3- After the order is accepted, you can choose the payment method from the order tracking page and click on Apple Pay 4- The amount will be deducted and the process will be successful."
+        "Q": "How is the trend determined in the app?",
+        "A": "The app relies on data analysis of interactions, ratings, and visit counts to display the most relevant content in your area."
       },
       {
-        "Q": "Facilitate PIN code",
-        "A": "Follow these steps: 1- Update your device to the latest version 2- Create an order and you can activate Apple Pay service by choosing the payment method (Apple Pay or Cash) and sending the order to the restaurant 3- After the order is accepted, you can choose the payment method from the order tracking page and click on Apple Pay 4- The amount will be deducted and the process will be successful."
+        "Q": "Is the app free to use?",
+        "A": "Yes, the app is free for users. Some additional features or special offers may be available for partners."
       },
       {
-        "Q": "Use balance",
-        "A": "Follow these steps: 1- Update your device to the latest version 2- Create an order and you can activate Apple Pay service by choosing the payment method (Apple Pay or Cash) and sending the order to the restaurant 3- After the order is accepted, you can choose the payment method from the order tracking page and click on Apple Pay 4- The amount will be deducted and the process will be successful."
+        "Q": "How can I review a place or product inside the app?",
+        "A": "After visiting the coffee shop or product page inside the app, you can write your review and add a comment based on your experience."
+      },
+      {
+        "Q": "Can I suggest a new place or product?",
+        "A": "Yes, you can suggest a new place or product through the app's suggestion section, and our team will review it."
+      },
+      {
+        "Q": "How do restaurants and cafes benefit from Alheba?",
+        "A": "Restaurants and cafes can connect with us through the app's contact section to include their place in the app."
+      },
+      {
+        "Q": "Can I share the trends with my friends?",
+        "A": "Yes, the app allows you to share trending pages directly through social media platforms."
+      },
+      {
+        "Q": "How do I get notifications for new trends?",
+        "A": "After enabling notifications, you will receive alerts for the latest trends in your area on a regular basis."
       }
     ]
   },
@@ -121,6 +137,6 @@
     "SALLA_PRODUCT": "A Salla Product",
     "COPYRIGHT": "All rights reserved to Salla Company © 2025"
   },
-  "Why is ready": "Why is ready",
+  "Why is ready": "Why Alheba?",
   "why-is-ready-desc": "Al-Hiba reflects our vision of showcasing the latest and trending restaurants, cafes, products, and trending videos, based on the user's location and interests, to provide them with a fresh, trending experience at all times."
 }

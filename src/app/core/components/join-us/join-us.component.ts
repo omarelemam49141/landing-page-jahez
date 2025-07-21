@@ -30,9 +30,9 @@ export class JoinUsComponent implements AfterViewInit, OnInit, OnDestroy {
   @ViewChild('title') title!: ElementRef;
   @ViewChild('desc') desc!: ElementRef;
   @ViewChild('button') button!: ElementRef;
-  @ViewChild('footer') footer!: ElementRef;
-  @ViewChild('privacy') privacy!: ElementRef;
-  @ViewChild('terms') terms!: ElementRef;
+  // @ViewChild('footer') footer!: ElementRef;
+  // @ViewChild('privacy') privacy!: ElementRef;
+  // @ViewChild('terms') terms!: ElementRef;
   @ViewChild('joinUsContainer') joinUsContainer!: ElementRef;
   //injection
   private languageService = inject(LanguageService);
@@ -99,26 +99,26 @@ export class JoinUsComponent implements AfterViewInit, OnInit, OnDestroy {
         },
         '-=0.3'
       )
-      .from(
-        this.privacy.nativeElement,
-        {
-          opacity: 0,
-          x: 100,
-          duration: 0.5,
-          ease: 'elastic.out(1.2, 0.4)',
-        },
-        '-=0.3'
-      )
-      .from(
-        this.terms.nativeElement,
-        {
-          opacity: 0,
-          x: 100,
-          duration: 0.5,
-          ease: 'elastic.out(1.2, 0.4)',
-        },
-        '<'
-      );
+      // .from(
+      //   this.privacy.nativeElement,
+      //   {
+      //     opacity: 0,
+      //     x: 100,
+      //     duration: 0.5,
+      //     ease: 'elastic.out(1.2, 0.4)',
+      //   },
+      //   '-=0.3'
+      // )
+      // .from(
+      //   this.terms.nativeElement,
+      //   {
+      //     opacity: 0,
+      //     x: 100,
+      //     duration: 0.5,
+      //     ease: 'elastic.out(1.2, 0.4)',
+      //   },
+      //   '<'
+      // );
 
       // Store the matchMedia context for cleanup
     this.matchMedia = gsap.matchMedia();
