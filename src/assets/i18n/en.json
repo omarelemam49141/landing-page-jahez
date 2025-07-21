@@ -8,8 +8,8 @@
     "QUESTIONS": "Questions"
   },
   "HEADER": {
-    "TITLE": "Your food is ready with Jahez",
-    "SUBTITLE": "The easiest and fastest service to reach the restaurant you love."
+    "TITLE": "Alheba .. Your guide to the trends in Saudi Arabia",
+    "SUBTITLE": "Discover the best places and premium locations in Saudi Arabia"
   },
   "SERVICES": {
     "TITLE1": "Who is Jahez?",
@@ -23,39 +23,70 @@
     "title": "Features",
     "subtitle": "Top features of Jahez app",
     "feature1": {
-      "title": "Scheduled Delivery",
-      "desc": "Get your food delivered at the time that suits you. Schedule your delivery to your door with ease!",
+      "title": "Discover everything that's trending",
+      "desc": "The app brings you the latest trends in your area, from coffee shops, restaurants, and products to social media content. You won’t miss a thing!",
       "secondary": "Order Tracking"
     },
     "feature2": {
-      "title": "Fast Delivery",
-      "desc": "Start from your browser or the app and get your order quickly and easily!",
+      "title": "Real reviews and experiences",
+      "desc": "Check user reviews and actual experiences before visiting a place or buying a product.",
       "secondary": "Home Chefs"
     },
     "feature3": {
-      "title": "Wide Selection",
-      "desc": "Choose from a wide variety of restaurants and cuisines to satisfy every craving and taste preference.",
+      "title": "Recommendations by your region",
+      "desc": "It automatically shows you trends and hotspots based on your city or region, without you having to search.",
       "secondary": "Thousands of Restaurants"
     },
     "feature4": {
-      "title": "Secure Payment",
-      "desc": "Pay safely and conveniently through the app with multiple secure and guaranteed payment methods.",
+      "title": "Share and be influential",
+      "desc": "You can add your evaluation and recommendations to others, and be part of the trend industry in your region.",
       "secondary": "Full Protection"
     },
     "carousel": {
       "title": "Get to know Jahez",
       "previous": "Previous",
       "next": "Next"
+    },
+    "feature5": {
+      "title": "Trusted application",
+      "desc": "All content and sites are carefully reviewed and selected to ensure quality."
+    },
+    "feature6": {
+      "title": "Share and be influential",
+      "desc": "You can add your rating and recommendations to others, and be part of the trend industry in your region."
     }
   },
-  "Who is ready": "Who is ready?",
-  "who-is-ready-desc": "Jahez is a Saudi Platform that specializes in delivering restaurant orders online. Because quality is our standard, we are keen at Jahez to provide a unique customer experience",
+  "Who is ready": "Who is Alheba?",
+  "who-is-ready-desc": "We're a Saudi team passionate about trends and local projects. We designed the Hiba app to be a digital platform showcasing everything trending in the Kingdom. Our goal is to support merchants and highlight the gifts that make a difference.",
   "JOIN_US": {
     "TITLE": "Join Us",
     "DESC": "We are happy to welcome service providers (partners, productive families). Join us now (in Saudi Arabia only)",
     "BUTTON": "Join Now",
     "PRIVACY": "Privacy Policy",
     "TERMS": "Terms of Use"
+  },
+  "TYPES_OF_HEBBA": {
+    "TITLE": "Types of Gifts in the App",
+    "PLACE": {
+      "TITLE": "Place",
+      "DESCRIPTION": "Discover the best places and premium locations"
+    },
+    "PRODUCTS": {
+      "TITLE": "Products & Services",
+      "DESCRIPTION": "Wide range of premium products and services"
+    },
+    "VIDEOS": {
+      "TITLE": "Trending Videos",
+      "DESCRIPTION": "Watch the latest trending videos and premium content"
+    }
+  },
+  "CONTACT_US": {
+    "TITLE": "Contact Us",
+    "ADDRESS_LINE_1": "King Abdullah Road, Al-Waha,",
+    "ADDRESS_LINE_2": "Riyadh 12444, Saudi Arabia",
+    "EMAIL_ADDRESS": "info@jahez.net",
+    "PHONE_NUMBER": "8001241220",
+    "DOWNLOAD_APP": "Download The App Now!"
   },
   "FAQ": {
     "TITLE": "Frequently Asked Questions",
@@ -83,5 +114,13 @@
         "A": "Follow these steps: 1- Update your device to the latest version 2- Create an order and you can activate Apple Pay service by choosing the payment method (Apple Pay or Cash) and sending the order to the restaurant 3- After the order is accepted, you can choose the payment method from the order tracking page and click on Apple Pay 4- The amount will be deducted and the process will be successful."
       }
     ]
-  }
+  },
+  "FOOTER": {
+    "PROMOTIONAL_TEXT": "All designs are reserved for the benefit of Jahez © 2019",
+    "LOGIN_BUTTON": "Login",
+    "SALLA_PRODUCT": "A Salla Product",
+    "COPYRIGHT": "All rights reserved to Salla Company © 2025"
+  },
+  "Why is ready": "Why is ready",
+  "why-is-ready-desc": "Al-Hiba reflects our vision of showcasing the latest and trending restaurants, cafes, products, and trending videos, based on the user's location and interests, to provide them with a fresh, trending experience at all times."
 }

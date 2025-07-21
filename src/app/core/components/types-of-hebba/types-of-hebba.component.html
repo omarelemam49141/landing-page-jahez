@@ -1,0 +1,62 @@
+<section #typesSection class="types-of-hebba-section">
+  <div class="container">
+    <!-- Main Header -->
+    <div class="types-header text-center mb-5">
+      <h2 class="main-title fs-32">{{ "TYPES_OF_HEBBA.TITLE" | translate }}</h2>
+    </div>
+
+    <!-- Types Cards -->
+    <div class="types-content">
+      <div class="row g-4 justify-content-center">
+        <!-- Type 1: المكان -->
+        <div class="col-lg-4 col-md-6 col-12">
+          <div #typeCard1 class="hebba-type-card type-place" (click)="onTypeClick(1)">
+            <div class="card-content">
+              <div class="hebba-type-icon">
+                <img [src]="giftTypes[0].icon" [alt]="giftTypes[0].titleKey | translate" />
+              </div>
+              <h3 class="type-title">{{ giftTypes[0].titleKey | translate }}</h3>
+              <p class="type-description">{{ giftTypes[0].descriptionKey | translate }}</p>
+              <div class="card-overlay"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Type 2: المنتجات و الخدمات -->
+        <div class="col-lg-4 col-md-6 col-12">
+          <div #typeCard2 class="hebba-type-card type-products" (click)="onTypeClick(2)">
+            <div class="card-content">
+              <div class="hebba-type-icon">
+                <img [src]="giftTypes[1].icon" [alt]="giftTypes[1].titleKey | translate" />
+              </div>
+              <h3 class="type-title">{{ giftTypes[1].titleKey | translate }}</h3>
+              <p class="type-description">{{ giftTypes[1].descriptionKey | translate }}</p>
+              <div class="card-overlay"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Type 3: الفيديوهات الشائعة -->
+        <div class="col-lg-4 col-md-6 col-12">
+          <div #typeCard3 class="hebba-type-card type-videos" (click)="onTypeClick(3)">
+            <div class="card-content">
+              <div class="hebba-type-icon">
+                <img [src]="giftTypes[2].icon" [alt]="giftTypes[2].titleKey | translate" />
+              </div>
+              <h3 class="type-title">{{ giftTypes[2].titleKey | translate }}</h3>
+              <p class="type-description">{{ giftTypes[2].descriptionKey | translate }}</p>
+              <div class="card-overlay"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Decorative Elements -->
+    <div class="decorative-elements">
+      <div class="floating-shape shape-1"></div>
+      <div class="floating-shape shape-2"></div>
+      <div class="floating-shape shape-3"></div>
+    </div>
+  </div>
+</section> 

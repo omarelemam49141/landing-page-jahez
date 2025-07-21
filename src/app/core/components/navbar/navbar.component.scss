@@ -9,6 +9,13 @@ nav.navbar {
   background: var(--color-primary);
 }
 
+.navbar-collapse {
+  background-color: var(--color-primary);
+  border-radius: 0 0 20px 20px;
+  position: relative;
+  top: 10px;
+}
+
 .navbar-nav .nav-link {
   letter-spacing: 0.5px;
   position: relative;

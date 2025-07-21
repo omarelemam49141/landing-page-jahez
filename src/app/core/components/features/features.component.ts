@@ -41,6 +41,7 @@ export class FeaturesComponent implements AfterViewInit, OnInit {
   @ViewChild('featuresSection', { static: true }) featuresSection!: ElementRef;
   @ViewChild('prevSmall', { static: true }) prevSmall!: ElementRef;
   @ViewChild('nextSmall', { static: true }) nextSmall!: ElementRef;
+  @ViewChild('headerTitle', { static: true }) headerTitle!: ElementRef;
   // properties
   isArabic!: boolean;
   private scrollTriggerInstance: any;
@@ -294,7 +295,7 @@ export class FeaturesComponent implements AfterViewInit, OnInit {
    */
   private animateMainHeader() {
     // Animate main title with word-by-word animation
-    const titleSplit = new SplitText('.main-title', { type: 'words' });
+    const titleSplit = new SplitText(this.headerTitle.nativeElement, { type: 'words' });
     gsap.from(titleSplit.words, {
       y: -50,
       opacity: 0,
@@ -381,10 +382,10 @@ export class FeaturesComponent implements AfterViewInit, OnInit {
    */
   private animateCarouselRepeatedly() {
     gsap.from(this.carousel.nativeElement, {
-      scale: 0.7,
-      opacity: 0,
+      // scale: 0.95,
+      // opacity: 0,
       y: 50,
-      rotation: 5,
+      // rotation: 5,
       duration: 1,
       ease: 'power2.out',
       scrollTrigger: {

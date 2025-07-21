@@ -3,8 +3,11 @@ import { NavbarComponent } from '../../../core/components/navbar/navbar.componen
 import { HeaderComponent } from '../../../core/components/header/header.component';
 import { ServicesComponent } from '../../../core/components/services/services.component';
 import { FeaturesComponent } from '../../../core/components/features/features.component';
+import { TypesOfHebbaComponent } from '../../../core/components/types-of-hebba/types-of-hebba.component';
+import { ContactUsComponent } from '../../../core/components/contact-us/contact-us.component';
 import { JoinUsComponent } from '../../../core/components/join-us/join-us.component';
 import { FaqsComponent } from '../../../core/components/faqs/faqs/faqs.component';
+import { FooterComponent } from "../../../core/components/footer/footer.component";
 
 // Declare global GSAP and Locomotive Scroll
 declare const gsap: any;
@@ -19,9 +22,12 @@ declare const LocomotiveScroll: any;
     HeaderComponent,
     ServicesComponent,
     FeaturesComponent,
+    TypesOfHebbaComponent,
+    ContactUsComponent,
     JoinUsComponent,
     FaqsComponent,
-  ],
+    FooterComponent
+],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.scss',
 })

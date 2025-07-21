@@ -132,7 +132,7 @@ export class JoinUsComponent implements AfterViewInit, OnInit, OnDestroy {
         end: 'bottom -230%',
         toggleActions: 'play none none reverse',
         animation: tl,
-        markers: true,
+        // markers: true,
       });
     });
 
@@ -145,7 +145,7 @@ export class JoinUsComponent implements AfterViewInit, OnInit, OnDestroy {
         end: 'bottom 70%',
         toggleActions: 'play none none reverse',
         animation: tl,
-        markers: true,
+        // markers: true,
       });
     });
   }

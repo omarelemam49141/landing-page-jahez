@@ -1,0 +1,305 @@
+.types-of-hebba-section {
+  padding: 80px 0;
+  background: linear-gradient(180deg, #4C214D 0%,  #8A3159 100%);
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+
+  // Background patterns
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    // background: 
+    //   radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+    //   radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.08) 0%, transparent 50%),
+    //   radial-gradient(circle at 40% 80%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .container {
+    position: relative;
+    z-index: 2;
+  }
+
+  // Header Styles
+  .types-header {
+    margin-bottom: 60px;
+
+    .main-title {
+      font-weight: 700;
+      color: #ffffff;
+      text-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      margin-bottom: 0;
+      direction: rtl;
+      font-family: 'Cairo', 'Amiri', serif;
+    }
+  }
+
+  // Cards Container
+  .types-content {
+    perspective: 300px;
+    .row {
+      margin: 0 -15px;
+    }
+  }
+
+  // Individual Card Styles
+  .hebba-type-card {
+    height: 350px;
+    perspective: 1000px;
+    cursor: pointer;
+    margin-bottom: 30px;
+
+    .card-content {
+      perspective: 200px;
+      transform-origin: "center 100%";
+      height: 100%;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 20px;
+      padding: 40px 25px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.15),
+        0 10px 20px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      overflow: hidden;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, #ff6b6b, #4ecdc4, #45b7d1);
+        border-radius: 20px 20px 0 0;
+      }
+
+      .card-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, transparent 0%, rgba(102, 126, 234, 0.1) 100%);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        border-radius: 20px;
+        pointer-events: none;
+      }
+
+      &:hover .card-overlay {
+        opacity: 1;
+      }
+    }
+
+    // Icon Styles
+    .hebba-type-icon {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 25px;
+      position: relative;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.2));
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: -10px;
+        left: -10px;
+        right: -10px;
+        bottom: -10px;
+        background: linear-gradient(45deg, #ff9a9e, #fecfef, #fecfef, #ff9a9e);
+        border-radius: 50%;
+        opacity: 0.3;
+        z-index: -1;
+        animation: pulse 2s ease-in-out infinite alternate;
+      }
+    }
+
+    // Typography
+    .type-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #2c3e50;
+      margin-bottom: 15px;
+      direction: rtl;
+      font-family: 'Cairo', 'Amiri', serif;
+    }
+
+    .type-description {
+      font-size: 1rem;
+      color: #6c757d;
+      line-height: 1.6;
+      margin-bottom: 0;
+      direction: rtl;
+      font-family: 'Cairo', 'Amiri', serif;
+    }
+
+    // Card-specific colors
+    &.type-place {
+      .hebba-type-icon::before {
+        background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+      }
+    }
+
+    &.type-products {
+      .hebba-type-icon::before {
+        background: linear-gradient(45deg, #a8edea, #fed6e3);
+      }
+    }
+
+    &.type-videos {
+      .hebba-type-icon::before {
+        background: linear-gradient(45deg, #d299c2, #fef9d7);
+      }
+    }
+
+    // Hover Effects
+    &:hover {
+      .card-content {
+        transform: translate3d(0, -10px, 0) rotateX(10deg);
+        box-shadow: 
+          0 30px 60px rgba(0, 0, 0, 0.2),
+          0 15px 30px rgba(0, 0, 0, 0.15);
+      }
+    }
+  }
+
+  // Decorative floating shapes
+  .decorative-elements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 1;
+
+    .floating-shape {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      animation: float 6s ease-in-out infinite;
+
+      &.shape-1 {
+        width: 100px;
+        height: 100px;
+        top: 10%;
+        left: 10%;
+        animation-delay: 0s;
+      }
+
+      &.shape-2 {
+        width: 150px;
+        height: 150px;
+        top: 70%;
+        right: 15%;
+        animation-delay: 2s;
+      }
+
+      &.shape-3 {
+        width: 80px;
+        height: 80px;
+        bottom: 20%;
+        left: 20%;
+        animation-delay: 4s;
+      }
+    }
+  }
+
+  // Responsive Design
+  @media (max-width: 992px) {
+    padding: 60px 0;
+
+    .hebba-type-card {
+      height: 320px;
+
+      .card-content {
+        padding: 30px 20px;
+      }
+
+      .hebba-type-icon {
+        transition: transform 0.3s ease;
+        width: 70px;
+        height: 70px;
+        margin-bottom: 20px;
+        transform-origin: center 100%;
+      }
+
+      .type-title {
+        font-size: 1.3rem;
+      }
+
+      .type-description {
+        font-size: 0.95rem;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 40px 0;
+
+    .hebba-type-card {
+      height: 300px;
+      margin-bottom: 25px;
+
+      .card-content {
+        padding: 25px 15px;
+      }
+
+      .hebba-type-icon {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 15px;
+      }
+
+      .type-title {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+      }
+
+      .type-description {
+        font-size: 0.9rem;
+      }
+    }
+  }
+
+  @media (max-width: 576px) {
+    .hebba-type-card {
+      height: 280px;
+
+      .card-content {
+        padding: 20px 12px;
+      }
+    }
+  }
+}
+
+// RTL Support
+[dir="rtl"] {
+  .hebba-type-card {
+    .type-title,
+    .type-description {
+      text-align: right;
+    }
+  }
+} 

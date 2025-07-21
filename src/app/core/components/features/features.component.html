@@ -3,7 +3,7 @@
     <div class="container">
       <!-- Main Features Header -->
       <div class="features-header">
-        <h2 class="main-title fs-32">{{ "features.title" | translate }}</h2>
+        <h2 #headerTitle class="main-title fs-32">{{ "features.title" | translate }}</h2>
         <p class="subtitle fs-24">{{ "features.subtitle" | translate }}</p>
       </div>
     
@@ -15,7 +15,7 @@
              <div class="slider-features slider-one">
                <img
                  class="bg-image"
-                 src="assets/images/pages/images/mobile-bg-header.webp"
+                 src="assets/images/pages/images/mobile-bg.png"
                  alt="Jahez App"
                />
                <div class="slides-content">
@@ -78,77 +78,37 @@
         <div class="features-column right-column d-none d-lg-flex">
            <!-- Feature 1 -->
            <div #feature1 class="feature-card feature-1">
-            <div class="feature-icon">
-              <img
-                src="https://cdn-icons-png.flaticon.com/512/3652/3652191.png"
-                alt="Calendar Icon"
-              />
-            </div>
-            <h3>{{ "features.feature1.title" | translate }}</h3>
+            <h3>🔥{{ "features.feature1.title" | translate }}</h3>
             <p>{{ "features.feature1.desc" | translate }}</p>
-            <div class="feature-secondary">
-              <img
-                src="https://cdn-icons-png.flaticon.com/512/1055/1055183.png"
-                alt="Delivery Icon"
-              />
-              <span>{{ "features.feature1.secondary" | translate }}</span>
-            </div>
           </div>
     
           <!-- Feature 3 -->
-          <div #feature3 class="feature-card feature-3">
-            <div class="feature-icon">
-              <img
-                src="https://cdn-icons-png.flaticon.com/512/1046/1046874.png"
-                alt="Restaurant Icon"
-              />
-            </div>
-            <h3>{{ "features.feature3.title" | translate }}</h3>
+          <div #feature2 class="feature-card feature-3">
+            <h3>📍{{ "features.feature3.title" | translate }}</h3>
             <p>{{ "features.feature3.desc" | translate }}</p>
-            <div class="feature-secondary">
-              <img
-                src="https://cdn-icons-png.flaticon.com/512/2921/2921222.png"
-                alt="Restaurant Count Icon"
-              />
-              <span>{{ "features.feature3.secondary" | translate }}</span>
-            </div>
           </div>
-          <!-- Feature 2 -->
-          <div #feature2 class="feature-card feature-2">
-            <div class="feature-icon">
-              <img
-                src="https://cdn-icons-png.flaticon.com/512/2088/2088617.png"
-                alt="Clock Icon"
-              />
-            </div>
-            <h3>{{ "features.feature2.title" | translate }}</h3>
+          <!-- Feature 4 -->
+          <div #feature3 class="feature-card feature-4">
+            <h3>🤩{{ "features.feature2.title" | translate }}</h3>
             <p>{{ "features.feature2.desc" | translate }}</p>
-            <div class="feature-secondary">
-              <img
-                src="https://cdn-icons-png.flaticon.com/512/1946/1946436.png"
-                alt="Home Icon"
-              />
-              <span>{{ "features.feature2.secondary" | translate }}</span>
-            </div>
           </div>
     
           <!-- Feature 4 -->
-          <div #feature4 class="feature-card feature-4">
-            <div class="feature-icon">
-              <img
-                src="https://cdn-icons-png.flaticon.com/512/1087/1087815.png"
-                alt="Payment Icon"
-              />
-            </div>
-            <h3>{{ "features.feature4.title" | translate }}</h3>
+          <div #feature4 class="feature-card feature-5">
+            <h3>💡{{ "features.feature4.title" | translate }}</h3>
             <p>{{ "features.feature4.desc" | translate }}</p>
-            <div class="feature-secondary">
-              <img
-                src="https://cdn-icons-png.flaticon.com/512/3064/3064197.png"
-                alt="Security Icon"
-              />
-              <span>{{ "features.feature4.secondary" | translate }}</span>
-            </div>
+          </div>
+
+          <!-- Feature 5 -->
+          <div #feature4 class="feature-card feature-5">
+            <h3>🛡️{{ "features.feature5.title" | translate }}</h3>
+            <p>{{ "features.feature5.desc" | translate }}</p>
+          </div>
+
+          <!-- Feature 6 -->
+          <div #feature4 class="feature-card feature-6">
+            <h3>📣{{ "features.feature6.title" | translate }}</h3>
+            <p>{{ "features.feature6.desc" | translate }}</p>
           </div>
         </div>
       </div>
@@ -159,7 +119,7 @@
   <div class="container">
     <!-- Main Features Header -->
     <div class="features-header">
-      <h2 class="main-title">{{ "features.title" | translate }}</h2>
+      <h2 #headerTitle class="main-title">{{ "features.title" | translate }}</h2>
       <p class="subtitle">{{ "features.subtitle" | translate }}</p>
     </div>
   

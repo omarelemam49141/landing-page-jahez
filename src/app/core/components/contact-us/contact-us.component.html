@@ -1,0 +1,57 @@
+<footer #contactSection class="contact-us-section">
+  <div class="container">
+    <!-- Contact Header -->
+    <div class="contact-header">
+      <h2 #contactTitle class="contact-title fs-32">{{ "CONTACT_US.TITLE" | translate }}</h2>
+    </div>
+
+    <!-- Contact Details -->
+    <div class="contact-details-grid">
+      <div class="contact-item address-item">
+        <img src="assets/images/pages/icons/location-pin.svg" alt="Location" class="contact-icon">
+        <p class="text-center fs-16">
+          {{ "CONTACT_US.ADDRESS_LINE_1" | translate }}<br>
+          {{ "CONTACT_US.ADDRESS_LINE_2" | translate }}
+        </p>
+      </div>
+      <div class="contact-item">
+        <img src="assets/images/pages/icons/email-icon.svg" alt="Email" class="contact-icon">
+        <a href="mailto:{{ 'CONTACT_US.EMAIL_ADDRESS' | translate }}">{{ "CONTACT_US.EMAIL_ADDRESS" | translate }}</a>
+      </div>
+      <div class="contact-item">
+        <img src="assets/images/pages/icons/phone-icon.svg" alt="Phone" class="contact-icon">
+        <a href="tel:{{ 'CONTACT_US.PHONE_NUMBER' | translate }}">{{ "CONTACT_US.PHONE_NUMBER" | translate }}</a>
+      </div>
+    </div>
+
+    <!-- Social Media -->
+    <div class="social-media">
+      <a href="https://www.youtube.com" target="_blank" aria-label="Youtube">
+        <img src="assets/images/pages/icons/youtube-icon.svg" alt="Youtube">
+      </a>
+      <a href="https://www.twitter.com" target="_blank" aria-label="Twitter">
+        <img src="assets/images/pages/icons/twitter-icon.svg" alt="Twitter">
+      </a>
+      <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
+        <img src="assets/images/pages/icons/instagram-icon.svg" alt="Instagram">
+      </a>
+    </div>
+
+    <!-- App Stores -->
+    <div class="app-stores">
+      <h3 class="app-stores-title fs-24">{{ "CONTACT_US.DOWNLOAD_APP" | translate }}</h3>
+      <div class="app-badges">
+        <a href="#" aria-label="Download on the App Store">
+          <img src="assets/images/pages/icons/app-store-badge.svg" alt="App Store">
+        </a>
+        <a href="#" aria-label="Get it on Google Play">
+          <img src="assets/images/pages/icons/google-play-badge.svg" alt="Google Play">
+        </a>
+        <a href="#" aria-label="Explore it on AppGallery">
+          <img src="assets/images/pages/icons/app-gallery-badge.svg" alt="AppGallery">
+        </a>
+      </div>
+    </div>
+
+  </div>
+</footer> 

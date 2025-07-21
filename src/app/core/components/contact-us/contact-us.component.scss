@@ -1,0 +1,123 @@
+.contact-us-section {
+  background-color: var(--color-secondary);
+  padding: 60px 0;
+
+  .container {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .contact-header {
+    margin-bottom: 40px;
+    .contact-title {
+      color: var(--color-primary-light);
+    }
+  }
+
+  .contact-details-grid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 40px;
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end; // Align content to the right
+      gap: 15px;
+      font-size: 16px;
+      color: #333;
+
+      &.address-item {
+        text-align: right;
+        justify-content: flex-end;
+      }
+      
+      a {
+        text-decoration: none;
+        color: #333;
+        &:hover {
+          color: #e2001a;
+        }
+      }
+
+      .contact-icon {
+        width: 28px;
+        height: 28px;
+      }
+    }
+  }
+
+  .social-media {
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+
+    img {
+      width: 32px;
+      height: 32px;
+      opacity: 0.7;
+      transition: opacity 0.3s ease;
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  .app-stores {
+    .app-stores-title {
+      color: var(--color-primary-light);
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+    .app-badges {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      svg {
+        color: var(--color-primary);
+      }
+      img {
+        height: 45px;
+        width: auto;
+      }
+    }
+  }
+
+  // RTL Support
+  [dir="rtl"] & {
+    .contact-details-grid .contact-item {
+      justify-content: flex-start; // Align content to the left for RTL
+      &.address-item {
+        text-align: left;
+      }
+    }
+    .contact-header .contact-title,
+    .app-stores .app-stores-title {
+      font-family: 'GE Dinar One', sans-serif; // Example Arabic font
+    }
+  }
+
+  // Responsive
+  @media (max-width: 768px) {
+    .contact-details-grid {
+      grid-template-columns: 1fr;
+      text-align: center;
+      .contact-item {
+        flex-direction: column-reverse;
+        justify-content: center;
+        &.address-item {
+          text-align: center;
+        }
+      }
+    }
+    .app-badges {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+} 
