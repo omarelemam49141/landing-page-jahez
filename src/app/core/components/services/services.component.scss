@@ -16,7 +16,7 @@
     height: 100%;
     z-index: -1;
     img {
-      width: 250px;
+      width: 150px;
       filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.2));
     }
     .header-icon1 {
@@ -33,6 +33,26 @@
       position: absolute;
       bottom: -20%;
       left: 70%;
+    }
+    .header-icon4 {
+      position: absolute;
+      top: 10%;
+      left: 30%;
+    }
+    .header-icon5 {
+      position: absolute;
+      top: 20%;
+      left: 10%;
+    }
+    .header-icon6 {
+      position: absolute; 
+      top: 40%;
+      left: 35%;
+    }
+    .header-icon7 {
+      position: absolute;
+      top: 80%;
+      left: 10%;
     }
   }
 }

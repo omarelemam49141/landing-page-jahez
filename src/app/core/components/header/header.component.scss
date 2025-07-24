@@ -18,8 +18,8 @@
     height: 100%;
     opacity: 0.5;
     .bg-icon {
-      width: 250px;
-      height: 250px;
+      width: 150px;
+      height: 150px;
     }
     .header-icon1 {
       position: absolute;
@@ -36,6 +36,39 @@
       bottom: -20%;
       left: 70%;
     }
+    .header-icon4 {
+      position: absolute;
+      top: 40%;
+      left: 50%;
+    }
+    .header-icon5 {
+      position: absolute;
+      top: 10%;
+      left: 30%;
+    }
+    .header-icon6 {
+      position: absolute;
+      top: 20%;
+      left: 70%;
+    }
+    .header-icon7 {
+      position: absolute;
+      top: 70%;
+      left: 30%;
+    }
+  }
+}
+
+.app-badges {
+  display: flex;
+  justify-content: flex-start;
+  gap: 15px;
+  svg {
+    color: var(--color-primary);
+  }
+  img {
+    height: 45px;
+    width: auto;
   }
 }
 
@@ -62,21 +95,23 @@
   position: relative;
   height: 500px !important;
   width: 250px !important;
+  border-radius: 20px;
   .bg-image {
     width: 250px !important;
     position: relative;
     left: 0;
     top: 0;
     height: 100%;
+    z-index: 10;
   }
   .page {
-    height: 83%;
-    width: 90%;
-    right: 11px;
-    top: 73px;
+    height: 95%;
+    width: 88%;
+    right: 15px;
+    top: 14px;
     position: absolute;
     overflow: hidden;
-    border-radius:20px;
+    border-radius: 0px 0px 20px 20px;
     .page-1 {
       position: absolute;
       height: 100%;
@@ -100,7 +135,7 @@
   width: 100%;
   max-width: 350px;
   height: auto;
-  border-radius: 2rem;
+  border-radius: 0px 0px 20px 20px;
   box-shadow: 0 8px 32px rgba(0,0,0,0.12);
 }
 

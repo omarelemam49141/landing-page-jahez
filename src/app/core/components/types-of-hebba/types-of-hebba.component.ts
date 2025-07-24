@@ -181,37 +181,37 @@ export class TypesOfHebbaComponent implements AfterViewInit, OnInit {
     cards.forEach((card, index) => {
       const icon = card.querySelector('.hebba-type-icon img');
       
-      card.addEventListener('mouseenter', () => {
-        gsap.to(card, {
-          filter: 'drop-shadow(0 25px 50px rgba(0, 0, 0, 0.25))',
-          duration: 0.3,
-          ease: 'power2.out'
-        });
+      // card.addEventListener('mouseenter', () => {
+      //   gsap.to(card, {
+      //     filter: 'drop-shadow(0 25px 50px rgba(0, 0, 0, 0.25))',
+      //     duration: 0.3,
+      //     ease: 'power2.out'
+      //   });
         
-        gsap.to(icon, {
-          scale: 1.3,
-          filter: 'drop-shadow(0 15px 25px rgba(0, 0, 0, 0.4))',
-          duration: 0.4,
-          rotationX: '10deg',
-          ease: 'back.out(1.7)'
-        });
-      });
+      //   gsap.to(icon, {
+      //     scale: 1.3,
+      //     filter: 'drop-shadow(0 15px 25px rgba(0, 0, 0, 0.4))',
+      //     duration: 0.4,
+      //     rotationX: '10deg',
+      //     ease: 'back.out(1.7)'
+      //   });
+      // });
 
-      card.addEventListener('mouseleave', () => {
-        gsap.to(card, {
-          filter: 'drop-shadow(0 20px 40px rgba(0, 0, 0, 0.15))',
-          duration: 0.3,
-          ease: 'power2.out'
-        });
+      // card.addEventListener('mouseleave', () => {
+      //   // gsap.to(card, {
+      //   //   filter: 'drop-shadow(0 20px 40px rgba(0, 0, 0, 0.15))',
+      //   //   duration: 0.3,
+      //   //   ease: 'power2.out'
+      //   // });
 
-        gsap.to(icon, {
-          scale: 1,
-          filter: 'drop-shadow(0 5px 10px rgba(0, 0, 0, 0.2))',
-          duration: 0.3,
-          rotationX: 0,
-          ease: 'power2.out'
-        });
-      });
+      //   gsap.to(icon, {
+      //     scale: 1,
+      //     filter: 'drop-shadow(0 5px 10px rgba(0, 0, 0, 0.2))',
+      //     duration: 0.3,
+      //     rotationX: 0,
+      //     ease: 'power2.out'
+      //   });
+      // });
 
       // Click animation
       card.addEventListener('click', () => {

@@ -31,17 +31,32 @@
   }
 }
 
-// Features Content Layout - Horizontal Structure
-.features-content-small{
-  align-items: center !important;
- .features-column {
-  height: 350px !important;
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
-}
-}
+.features-column {
+  h3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+  }
+  .feat-icon {
+    width: 30px;
+    height: 30px;
+  }
   
+}
+
+// Features Content Layout - Horizontal Structure
+.features-content-small {
+  align-items: center !important;
+  .features-column {
+    height: 350px !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    
+  }
+}
+
 .features-content {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
@@ -108,7 +123,8 @@
 }
 
 // Feature Cards Styling (No Hover Effects)
-.feature-card, .small-feature-card {
+.feature-card,
+.small-feature-card {
   background: transparent;
   color: #ffd600;
   width: 100% !important;
@@ -302,10 +318,10 @@
         height: 100%;
       }
       .slides-content {
-        right: 12px;
-        top: 73px;
-        height: 81%;
-        width: 88%;
+        right: 15px;
+        top: 40px;
+        height: 90%;
+        width: 87%;
         margin: auto;
         position: absolute;
         overflow: hidden;

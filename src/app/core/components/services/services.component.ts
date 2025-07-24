@@ -36,6 +36,10 @@ export class ServicesComponent implements AfterViewInit, OnInit {
   @ViewChild('headerIcon1', { static: true }) headerIcon1!: ElementRef;
   @ViewChild('headerIcon2', { static: true }) headerIcon2!: ElementRef;
   @ViewChild('headerIcon3', { static: true }) headerIcon3!: ElementRef;
+  @ViewChild('headerIcon4', { static: true }) headerIcon4!: ElementRef;
+  @ViewChild('headerIcon5', { static: true }) headerIcon5!: ElementRef;
+  @ViewChild('headerIcon6', { static: true }) headerIcon6!: ElementRef;
+  @ViewChild('headerIcon7', { static: true }) headerIcon7!: ElementRef;
   @ViewChild('imagesContainerMobile', { static: true }) imagesContainerMobile!: ElementRef;
   @ViewChild('textSlider', { static: true }) textSlider!: ElementRef;
   //injection
@@ -216,6 +220,54 @@ export class ServicesComponent implements AfterViewInit, OnInit {
 
     this.scrollTriggerInstance = gsap.from(this.headerIcon3.nativeElement, {
       y: '300px', // Reduced distance for more visible effect
+      ease: 'none', // Better for scroll-linked animations
+      scrollTrigger: {
+        trigger: this.wrapper.nativeElement,
+        start: start, // Animation starts when header section enters viewport
+        end: end, // Animation ends when header section leaves viewport
+        scrub: bgIconsScrub, // Smooth scrubbing
+        // markers: true, // Keep markers for debugging
+      },
+    });
+
+    this.scrollTriggerInstance = gsap.from(this.headerIcon4.nativeElement, {
+      y: '300px', // Reduced distance for more visible effect
+      ease: 'none', // Better for scroll-linked animations
+      scrollTrigger: {
+        trigger: this.wrapper.nativeElement,
+        start: start, // Animation starts when header section enters viewport
+        end: end, // Animation ends when header section leaves viewport
+        scrub: bgIconsScrub, // Smooth scrubbing
+        // markers: true, // Keep markers for debugging
+      },
+    });
+
+    this.scrollTriggerInstance = gsap.from(this.headerIcon5.nativeElement, {
+      y: '300px', // Reduced distance for more visible effect
+      ease: 'none', // Better for scroll-linked animations
+      scrollTrigger: {
+        trigger: this.wrapper.nativeElement,
+        start: start, // Animation starts when header section enters viewport
+        end: end, // Animation ends when header section leaves viewport
+        scrub: bgIconsScrub, // Smooth scrubbing
+        // markers: true, // Keep markers for debugging
+      },
+    });
+
+    this.scrollTriggerInstance = gsap.from(this.headerIcon6.nativeElement, {
+      y: '300px', // Reduced distance for more visible effect
+      ease: 'none', // Better for scroll-linked animations
+      scrollTrigger: {
+        trigger: this.wrapper.nativeElement,
+        start: start, // Animation starts when header section enters viewport
+        end: end, // Animation ends when header section leaves viewport
+        scrub: bgIconsScrub, // Smooth scrubbing
+        // markers: true, // Keep markers for debugging
+      },
+    });
+
+    this.scrollTriggerInstance = gsap.from(this.headerIcon7.nativeElement, {
+      y: '-300px', // Reduced distance for more visible effect // Reduced distance for more visible effect
       ease: 'none', // Better for scroll-linked animations
       scrollTrigger: {
         trigger: this.wrapper.nativeElement,
