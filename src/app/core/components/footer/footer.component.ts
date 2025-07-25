@@ -13,9 +13,6 @@ declare const gsap: any;
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements AfterViewInit, OnInit {
-  // @ViewChild('footer', { static: true }) footerRef!: ElementRef;
-  // @ViewChild('footerContent', { static: true }) footerContentRef!: ElementRef;
-
   private langService = inject(LanguageService);
   isLangArabic!: boolean;
 
@@ -26,22 +23,5 @@ export class FooterComponent implements AfterViewInit, OnInit {
   }
 
   ngAfterViewInit(): void {
-    // gsap.set(this.footerRef.nativeElement, {
-    //   y: "100%",
-    //   opacity: 0
-    // });
-
-    // gsap.to(this.footerRef.nativeElement, {
-    //   y: "0%",
-    //   opacity: 1,
-    //   duration: 1.2,
-    //   ease: 'power4.out',
-    //   scrollTrigger: {
-    //     trigger: this.footerRef.nativeElement,
-    //     start: 'top bottom',
-    //     end: 'bottom top',
-    //     toggleActions: 'play none none reverse'
-    //   }
-    // });
   }
-} 
+}

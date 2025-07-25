@@ -9,7 +9,7 @@ import {
 } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { LanguageService } from '../../../shared/services/language.service';
-import { animate } from '@angular/animations';
+import { animate, stagger } from '@angular/animations';
 
 declare const gsap: any;
 declare const ScrollTrigger: any;
@@ -29,7 +29,8 @@ export class JoinUsComponent implements AfterViewInit, OnInit, OnDestroy {
   //view children
   @ViewChild('title') title!: ElementRef;
   @ViewChild('desc') desc!: ElementRef;
-  @ViewChild('button') button!: ElementRef;
+  @ViewChild('btns') btns!: ElementRef;
+
   // @ViewChild('footer') footer!: ElementRef;
   // @ViewChild('privacy') privacy!: ElementRef;
   // @ViewChild('terms') terms!: ElementRef;
@@ -63,9 +64,10 @@ export class JoinUsComponent implements AfterViewInit, OnInit, OnDestroy {
 
   //methods
   private startScrollTrigger(): void {
-    gsap.set(this.button.nativeElement, {
+    gsap.set(this.btns.nativeElement, {
       transformOrigin: 'center center -50px',
     });
+    
 
     
 
@@ -89,13 +91,14 @@ export class JoinUsComponent implements AfterViewInit, OnInit, OnDestroy {
         '-=0.3'
       )
       .from(
-        this.button.nativeElement,
+        this.btns.nativeElement.children,
         {
           opacity: 0,
           rotateX: -90,
           rotateY: 60,
           ease: 'back.out(1.5)',
           duration: 0.5,
+          stagger: 0.2
         },
         '-=0.3'
       )

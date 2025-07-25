@@ -8,7 +8,7 @@
     
     .container {
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
       max-width: 1200px;
       margin: 0 auto;
@@ -37,7 +37,7 @@
 
   .main-footer {
     background-color: #f8f8f8;
-    padding: 30px 0;
+    padding: 30px 0 0;
     
     .container {
       display: flex;
@@ -57,8 +57,8 @@
       font-size: 16px;
 
       .salla-logo {
-        width: 24px;
-        height: 24px;
+        width: 130px;
+        margin-top: -40px;
       }
     }
     

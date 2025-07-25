@@ -1,6 +1,6 @@
 {
   "NAV": {
-    "BRAND": "Al-Habba",
+    "BRAND": "Al-Habbah",
     "FEATURES": "Features",
     "APP": "App",
     "JOIN_US": "Join Us",
@@ -8,12 +8,12 @@
     "QUESTIONS": "Questions"
   },
   "HEADER": {
-    "TITLE": "Al-Habba .. Your guide to the trends in Saudi Arabia",
+    "TITLE": "Al-Habbah .. Your guide to the trends in Saudi Arabia",
     "SUBTITLE": "Discover the best places and premium locations in Saudi Arabia"
   },
   "SERVICES": {
-    "TITLE1": "Who is Al-Habba?",
-    "DESC1": "Al-Habba is a Saudi platform specialized in delivering online restaurant orders.",
+    "TITLE1": "Who is Al-Habbah?",
+    "DESC1": "Al-Habbah is a Saudi platform specialized in delivering online restaurant orders.",
     "TITLE2": "Fast Delivery",
     "DESC2": "We ensure your food arrives hot and fresh, thanks to our efficient delivery network.",
     "TITLE3": "Wide Restaurant Selection",
@@ -21,7 +21,7 @@
   },
   "features": {
     "title": "Features",
-    "subtitle": "Top features of Al-Habba app",
+    "subtitle": "Top features of Al-Habbah app",
     "feature1": {
       "title": "Discover everything that's trending",
       "desc": "The app brings you the latest trends in your area, from coffee shops, restaurants, and products to social media content. You won’t miss a thing!",
@@ -39,11 +39,11 @@
     },
     "feature4": {
       "title": "Customized recommendations",
-      "desc": "Based on your interactions and preferences, Al-Habba suggests places and products similar to your interests using artificial intelligence.",
+      "desc": "Based on your interactions and preferences, Al-Habbah suggests places and products similar to your interests using artificial intelligence.",
       "secondary": "Full Protection"
     },
     "carousel": {
-      "title": "Get to know Al-Habba",
+      "title": "Get to know Al-Habbah",
       "previous": "Previous",
       "next": "Next"
     },
@@ -56,17 +56,17 @@
       "desc": "You can add your rating and recommendations to others, and be part of the trend industry in your region."
     }
   },
-  "Who is ready": "Who is Al-Habba?",
+  "Who is ready": "Who is Al-Habbah?",
   "who-is-ready-desc": "We're a Saudi team passionate about trends and local projects. We designed the Habba app to be a digital platform showcasing everything trending in the Kingdom. Our goal is to support merchants and highlight the gifts that make a difference.",
   "JOIN_US": {
     "TITLE": "Join Us",
-    "DESC": "We are happy to welcome service providers (partners, productive families). Join us now (in Saudi Arabia only)",
+    "DESC": "We are happy to have you with us — Join us now.",
     "BUTTON": "Join Now",
     "PRIVACY": "Privacy Policy",
     "TERMS": "Terms of Use"
   },
   "TYPES_OF_HEBBA": {
-    "TITLE": "Types of Al-Habba in the App",
+    "TITLE": "Types of Al-Habbah in the App",
     "PLACE": {
       "TITLE": "Place",
       "DESCRIPTION": "Discover the best places and premium locations"
@@ -82,11 +82,11 @@
   },
   "CONTACT_US": {
     "TITLE": "Contact Us",
-    "EMAIL_ADDRESS": "m.Al-Habbah@info",
+    "EMAIL_ADDRESS": "info@alhabba.com",
     "PHONE_NUMBER": "8001241220",
     "DOWNLOAD_APP": "Download The App Now!",
     "SOCIAL_MEDIA_TITLE": "Social Media Accounts:",
-    "SOCIAL_MEDIA_HANDLE": "Al-Habbah_app@"
+    "SOCIAL_MEDIA_HANDLE": "Al-Habbahh_app@"
   },
   "FAQ": {
     "TITLE": "Frequently Asked Questions",
@@ -98,8 +98,8 @@
     "SUBMIT": "Send",
     "QUESTIONS": [
       {
-        "Q": "What is the Al-Habba app?",
-        "A": "Al-Habba is an app that allows users to discover the latest and trending restaurants, cafes, products, and trending videos, based on the user's location and interests, to provide them with a fresh, trending experience at all times."
+        "Q": "What is the Al-Habbah app?",
+        "A": "Al-Habbah is an app that allows users to discover the latest and trending restaurants, cafes, products, and trending videos, based on the user's location and interests, to provide them with a fresh, trending experience at all times."
       },
       {
         "Q": "How is the trend determined in the app?",
@@ -118,7 +118,7 @@
         "A": "Yes, you can suggest a new place or product through the app's suggestion section, and our team will review it."
       },
       {
-        "Q": "How do restaurants and cafes benefit from Al-Habba?",
+        "Q": "How do restaurants and cafes benefit from Al-Habbah?",
         "A": "Restaurants and cafes can connect with us through the app's contact section to include their place in the app."
       },
       {
@@ -132,11 +132,20 @@
     ]
   },
   "FOOTER": {
-    "PROMOTIONAL_TEXT": "All designs are reserved for the benefit of Al-Habba © 2019",
+    "PROMOTIONAL_TEXT": "All rights are reserved for the benefit of Ettigah © 2025",
     "LOGIN_BUTTON": "Login",
-    "SALLA_PRODUCT": "A Salla Product",
-    "COPYRIGHT": "All rights reserved to Salla Company © 2025"
+    "SALLA_PRODUCT": "An Ettigah Product",
+    "COPYRIGHT": "All rights reserved to Ettigah © 2025"
   },
-  "Why is ready": "Why Al-Habba?",
-  "why-is-ready-desc": "Al-Habba reflects our vision of showcasing the latest and trending restaurants, cafes, products, and trending videos, based on the user's location and interests, to provide them with a fresh, trending experience at all times."
+  "Why is ready": "Why Al-Habbah?",
+  "why-is-ready-desc": "Al-Habbah reflects our vision of showcasing the latest and trending restaurants, cafes, products, and trending videos, based on the user's location and interests, to provide them with a fresh, trending experience at all times.",
+  "JOIN_US_MERCHANT": {
+    "BUTTON": "Join Us as a Merchant"
+  },
+  "JOIN_US_TEAM": {
+    "BUTTON": "Join Our Team"
+  },
+  "JOIN_US_INVESTOR": {
+    "BUTTON": "Join Us as an Investor"
+  }
 }

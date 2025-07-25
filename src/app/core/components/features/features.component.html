@@ -1,54 +1,232 @@
 <section #featuresSection class="features-section d-none d-lg-block">
+  <div class="container">
+    <!-- Main Features Header -->
+    <div class="features-header">
+      <h2 #headerTitle class="main-title fs-32">
+        {{ "features.title" | translate }}
+      </h2>
+      <p class="subtitle fs-24">{{ "features.subtitle" | translate }}</p>
+    </div>
 
-    <div class="container">
-      <!-- Main Features Header -->
-      <div class="features-header">
-        <h2 #headerTitle class="main-title fs-32">{{ "features.title" | translate }}</h2>
-        <p class="subtitle fs-24">{{ "features.subtitle" | translate }}</p>
+    <!-- Features Content with horizontal layout -->
+    <div class="features-content d-flex gap-4 justify-content-between pb-5">
+      <!-- start carousel -->
+      <div #carousel class="carousel">
+        <div #Slider class="slider-container">
+          <div class="slider-features slider-one">
+            <img
+              class="bg-image"
+              src="assets/images/pages/images/mobile-bg.png"
+              alt="Jahez App"
+            />
+            <div class="slides-content">
+              <div
+                class="slide d-flex flex-column justify-content-center align-items-center"
+              >
+                <img
+                  #page1
+                  class="page-1"
+                  src="assets/images/pages/images/mobile-page1.png"
+                  alt="Jahez App"
+                />
+              </div>
+              <div
+                class="slide d-flex flex-column justify-content-center align-items-center"
+              >
+                <img
+                  #page1
+                  class="page-1"
+                  src="assets/images/pages/images/mobile-page2.png"
+                  alt="Jahez App"
+                />
+              </div>
+              <div
+                class="slide d-flex flex-column justify-content-center align-items-center"
+              >
+                <img
+                  #page1
+                  class="page-1"
+                  src="assets/images/pages/images/mobile-page3.png"
+                  alt="Jahez App"
+                />
+              </div>
+              <div
+                class="slide d-flex flex-column justify-content-center align-items-center"
+              >
+                <img
+                  #page1
+                  class="page-1"
+                  src="assets/images/pages/images/mobile-page4.png"
+                  alt="Jahez App"
+                />
+              </div>
+
+              <div
+                class="slide d-flex flex-column justify-content-center align-items-center"
+              >
+                <img
+                  #page1
+                  class="page-1"
+                  src="assets/images/pages/images/mobile-page5.png"
+                  alt="Jahez App"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="buttons">
+          <button #prev id="prev-feature">
+            @if (isArabic) {
+            <i class="fa-solid fa-arrow-right"></i>
+            } @else {
+            <i class="fa-solid fa-arrow-left"></i>
+            }
+          </button>
+          <button #next id="next-feature">
+            @if (isArabic) {
+            <i class="fa-solid fa-arrow-left"></i>
+            } @else {
+            <i class="fa-solid fa-arrow-right"></i>
+            }
+          </button>
+        </div>
       </div>
-    
-      <!-- Features Content with horizontal layout -->
-      <div class="features-content d-flex gap-4 justify-content-between pb-5">
-        <!-- start carousel -->
-         <div #carousel class="carousel">
-           <div #Slider class="slider-container">
-             <div class="slider-features slider-one">
-               <img
-                 class="bg-image"
-                 src="assets/images/pages/images/mobile-bg.png"
-                 alt="Jahez App"
-               />
-               <div class="slides-content">
-                 <div
-                 class="slide d-flex flex-column justify-content-center align-items-center"
-               >
-                 <img
-                   #page1
-                   class="page-1"
-                   src="assets/images/pages/images/mobile-page1.png"
-                   alt="Jahez App"
-                 />
-               </div>
-               <div
-                 class="slide d-flex flex-column justify-content-center align-items-center"
-               >
-                 <img
-                   #page1
-                   class="page-1"
-                   src="assets/images/pages/images/mobile-page2.png"
-                   alt="Jahez App"
-                 />
-               </div>
-               <div
-                 class="slide d-flex flex-column justify-content-center align-items-center"
-               >
-                 <img
-                   #page1
-                   class="page-1"
-                   src="assets/images/pages/images/mobile-page3.png"
-                   alt="Jahez App"
-                 />
-               </div>
+      <!-- end start carousel -->
+
+      <!-- Right Features Column -->
+      <div class="features-column right-column d-none d-lg-flex">
+        <!-- Feature 1 -->
+        <div #feature1 class="feature-card feature-1">
+          <h3>
+            <img
+              class="feat-icon"
+              src="assets/images/pages/icons/features/fire.png"
+              alt="Jahez App"
+            />{{ "features.feature1.title" | translate }}
+          </h3>
+          <p>{{ "features.feature1.desc" | translate }}</p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div #feature2 class="feature-card feature-3">
+          <h3>
+            <img
+              class="feat-icon"
+              src="assets/images/pages/icons/features/location.png"
+              alt="Jahez App"
+            />{{ "features.feature3.title" | translate }}
+          </h3>
+          <p>{{ "features.feature3.desc" | translate }}</p>
+        </div>
+        <!-- Feature 4 -->
+        <div #feature3 class="feature-card feature-4">
+          <h3>
+            <img
+              class="feat-icon"
+              src="assets/images/pages/icons/features/verified.png"
+              alt="Jahez App"
+            />{{ "features.feature2.title" | translate }}
+          </h3>
+          <p>{{ "features.feature2.desc" | translate }}</p>
+        </div>
+
+        <!-- Feature 4 -->
+        <div #feature4 class="feature-card feature-5">
+          <h3>
+            <img
+              class="feat-icon"
+              src="assets/images/pages/icons/features/validation.png"
+              alt="Jahez App"
+            />{{ "features.feature4.title" | translate }}
+          </h3>
+          <p>{{ "features.feature4.desc" | translate }}</p>
+        </div>
+
+        <!-- Feature 5 -->
+        <div #feature4 class="feature-card feature-5">
+          <h3>
+            <img
+              class="feat-icon"
+              src="assets/images/pages/icons/features/trust.png"
+              alt="Jahez App"
+            />{{ "features.feature5.title" | translate }}
+          </h3>
+          <p>{{ "features.feature5.desc" | translate }}</p>
+        </div>
+
+        <!-- Feature 6 -->
+        <div #feature4 class="feature-card feature-6">
+          <h3>
+            <img
+              class="feat-icon"
+              src="assets/images/pages/icons/features/fire.png"
+              alt="Jahez App"
+            />{{ "features.feature6.title" | translate }}
+          </h3>
+          <p>{{ "features.feature6.desc" | translate }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section
+  #smallFeaturesSection
+  class="features-section small-features-section d-block d-lg-none"
+>
+  <div class="container">
+    <!-- Main Features Header -->
+    <div class="features-header">
+      <h2 #headerTitle class="main-title">
+        {{ "features.title" | translate }}
+      </h2>
+      <p class="subtitle">{{ "features.subtitle" | translate }}</p>
+    </div>
+
+    <!-- Features Content with horizontal layout -->
+    <div
+      class="features-content d-flex gap-4 justify-content-between pb-5 flex-column-reverse features-content-small"
+    >
+      <!-- start carousel -->
+      <div #carousel class="carousel">
+        <div #Slider class="slider-container">
+          <div class="slider-features slider-one">
+            <img
+              class="bg-image"
+              src="assets/images/pages/images/mobile-bg.png"
+              alt="Jahez App"
+            />
+            <div class="slides-content">
+              <div
+                class="slide d-flex flex-column justify-content-center align-items-center"
+              >
+                <img
+                  #page1
+                  class="page-1"
+                  src="assets/images/pages/images/mobile-page1.png"
+                  alt="Jahez App"
+                />
+              </div>
+              <div
+                class="slide d-flex flex-column justify-content-center align-items-center"
+              >
+                <img
+                  #page1
+                  class="page-1"
+                  src="assets/images/pages/images/mobile-page2.png"
+                  alt="Jahez App"
+                />
+              </div>
+              <div
+                class="slide d-flex flex-column justify-content-center align-items-center"
+              >
+                <img
+                  #page1
+                  class="page-1"
+                  src="assets/images/pages/images/mobile-page3.png"
+                  alt="Jahez App"
+                />
+              </div>
                 <div
                   class="slide d-flex flex-column justify-content-center align-items-center"
                 >
@@ -59,208 +237,77 @@
                     alt="Jahez App"
                   />
                 </div>
-
                 <div
-                  class="slide d-flex flex-column justify-content-center align-items-center"
-                >
-                  <img
-                    #page1
-                    class="page-1"
-                    src="assets/images/pages/images/mobile-page5.png"
-                    alt="Jahez App"
-                  />
-                </div>
-                </div>
-
-                
-               
-               
-             </div>
-       
-             
-           </div>
-           <div class="buttons">
-             <button #prev id="prev-feature">
-               @if (isArabic) {
-               <i class="fa-solid fa-arrow-right"></i>
-               } @else {
-               <i class="fa-solid fa-arrow-left"></i>
-               }
-             </button>
-             <button #next id="next-feature">
-               @if (isArabic) {
-               <i class="fa-solid fa-arrow-left"></i>
-               } @else {
-               <i class="fa-solid fa-arrow-right"></i>
-               }
-             </button>
-           </div>
-         </div>
-        <!-- end start carousel -->
-    
-        <!-- Right Features Column -->
-        <div class="features-column right-column d-none d-lg-flex">
-           <!-- Feature 1 -->
-           <div #feature1 class="feature-card feature-1">
-            <h3><img class="feat-icon" src="assets/images/pages/icons/features/fire.png" alt="Jahez App">{{ "features.feature1.title" | translate }}</h3>
-            <p>{{ "features.feature1.desc" | translate }}</p>
-          </div>
-    
-          <!-- Feature 3 -->
-          <div #feature2 class="feature-card feature-3">
-            <h3><img class="feat-icon" src="assets/images/pages/icons/features/location.png" alt="Jahez App">{{ "features.feature3.title" | translate }}</h3>
-            <p>{{ "features.feature3.desc" | translate }}</p>
-          </div>
-          <!-- Feature 4 -->
-          <div #feature3 class="feature-card feature-4">
-            <h3><img class="feat-icon" src="assets/images/pages/icons/features/verified.png" alt="Jahez App">{{ "features.feature2.title" | translate }}</h3>
-            <p>{{ "features.feature2.desc" | translate }}</p>
-          </div>
-    
-          <!-- Feature 4 -->
-          <div #feature4 class="feature-card feature-5">
-            <h3><img class="feat-icon" src="assets/images/pages/icons/features/validation.png" alt="Jahez App">{{ "features.feature4.title" | translate }}</h3>
-            <p>{{ "features.feature4.desc" | translate }}</p>
-          </div>
-
-          <!-- Feature 5 -->
-          <div #feature4 class="feature-card feature-5">
-            <h3><img class="feat-icon" src="assets/images/pages/icons/features/trust.png" alt="Jahez App">{{ "features.feature5.title" | translate }}</h3>
-            <p>{{ "features.feature5.desc" | translate }}</p>
-          </div>
-
-          <!-- Feature 6 -->
-          <div #feature4 class="feature-card feature-6">
-            <h3><img class="feat-icon" src="assets/images/pages/icons/features/fire.png" alt="Jahez App">{{ "features.feature6.title" | translate }}</h3>
-            <p>{{ "features.feature6.desc" | translate }}</p>
+                class="slide d-flex flex-column justify-content-center align-items-center"
+              >
+                <img
+                  #page1
+                  class="page-1"
+                  src="assets/images/pages/images/mobile-page5.png"
+                  alt="Jahez App"
+                />
+              </div>
+            </div>
           </div>
         </div>
+        <div class="buttons">
+          <button #prevSmall id="prev-feature">
+            @if (isArabic) {
+            <i class="fa-solid fa-arrow-right"></i>
+            } @else {
+            <i class="fa-solid fa-arrow-left"></i>
+            }
+          </button>
+          <button #nextSmall id="next-feature">
+            @if (isArabic) {
+            <i class="fa-solid fa-arrow-left"></i>
+            } @else {
+            <i class="fa-solid fa-arrow-right"></i>
+            }
+          </button>
+        </div>
       </div>
-    </div>
-</section>
-
-<section #smallFeaturesSection class="features-section small-features-section d-block d-lg-none">
-  <div class="container">
-    <!-- Main Features Header -->
-    <div class="features-header">
-      <h2 #headerTitle class="main-title">{{ "features.title" | translate }}</h2>
-      <p class="subtitle">{{ "features.subtitle" | translate }}</p>
-    </div>
-  
-    <!-- Features Content with horizontal layout -->
-    <div class="features-content d-flex gap-4 justify-content-between pb-5 flex-column-reverse features-content-small">
-      <!-- start carousel -->
-       <div #carousel class="carousel">
-         <div #Slider class="slider-container">
-           <div class="slider-features slider-one">
-             <img
-               class="bg-image"
-               src="assets/images/pages/images/mobile-page1.png"
-               alt="Jahez App"
-             />
-             <div class="slides-content">
-               <div
-               class="slide d-flex flex-column justify-content-center align-items-center"
-             >
-               <img
-                 #page1
-                 class="page-1"
-                 src="assets/images/pages/images/mobile-page2.png"
-                 alt="Jahez App"
-               />
-             </div>
-             <div
-               class="slide d-flex flex-column justify-content-center align-items-center"
-             >
-               <img
-                 #page1
-                 class="page-1"
-                 src="assets/images/pages/images/mobile-page3.png"
-                 alt="Jahez App"
-               />
-             </div>
-             <div
-               class="slide d-flex flex-column justify-content-center align-items-center"
-             >
-               <img
-                 #page1
-                 class="page-1"
-                 src="assets/images/pages/images/mobile-page4.png"
-                 alt="Jahez App"
-               />
-             </div>
-             <div
-               class="slide d-flex flex-column justify-content-center align-items-center"
-             >
-               <img
-                 #page1
-                 class="page-1"
-                 src="assets/images/pages/images/mobile-page5.png"
-                 alt="Jahez App"
-               />
-             </div>
-             </div>
-             
-           </div>
-     
-           
-         </div>
-         <div class="buttons">
-           <button #prevSmall id="prev-feature">
-             @if (isArabic) {
-             <i class="fa-solid fa-arrow-right"></i>
-             } @else {
-             <i class="fa-solid fa-arrow-left"></i>
-             }
-           </button>
-           <button #nextSmall id="next-feature">
-             @if (isArabic) {
-             <i class="fa-solid fa-arrow-left"></i>
-             } @else {
-             <i class="fa-solid fa-arrow-right"></i>
-             }
-           </button>
-         </div>
-       </div>
       <!-- end start carousel -->
 
       <!-- start small Features column-->
-      <div class="features-column small-features-column right-column d-flex d-lg-none">
-         <!-- Feature 1 -->
-         <div #feature1 class="feature-card small-feature-card feature-1">
+      <div
+        class="features-column small-features-column right-column d-flex d-lg-none"
+      >
+        <!-- Feature 1 -->
+        <div #feature1 class="feature-card small-feature-card feature-1">
           <h3>🔥{{ "features.feature1.title" | translate }}</h3>
           <p>{{ "features.feature1.desc" | translate }}</p>
         </div>
- 
-         <!-- Feature 3 -->
-         <div #feature2 class="feature-card small-feature-card feature-3">
-           <h3>📍{{ "features.feature3.title" | translate }}</h3>
-           <p>{{ "features.feature3.desc" | translate }}</p>
-         </div>
-         <!-- Feature 4 -->
-         <div #feature3 class="feature-card small-feature-card feature-4">
-           <h3>🤩{{ "features.feature2.title" | translate }}</h3>
-           <p>{{ "features.feature2.desc" | translate }}</p>
-         </div>
- 
-         <!-- Feature 4 -->
-         <div #feature4 class="feature-card small-feature-card feature-5">
-           <h3>💡{{ "features.feature4.title" | translate }}</h3>
-           <p>{{ "features.feature4.desc" | translate }}</p>
-         </div>
 
-         <!-- Feature 5 -->
-         <div #feature4 class="feature-card small-feature-card feature-5">
-           <h3>🛡️{{ "features.feature5.title" | translate }}</h3>
-           <p>{{ "features.feature5.desc" | translate }}</p>
-         </div>
+        <!-- Feature 3 -->
+        <div #feature2 class="feature-card small-feature-card feature-3">
+          <h3>📍{{ "features.feature3.title" | translate }}</h3>
+          <p>{{ "features.feature3.desc" | translate }}</p>
+        </div>
+        <!-- Feature 4 -->
+        <div #feature3 class="feature-card small-feature-card feature-4">
+          <h3>🤩{{ "features.feature2.title" | translate }}</h3>
+          <p>{{ "features.feature2.desc" | translate }}</p>
+        </div>
 
-         <!-- Feature 6 -->
-         <div #feature4 class="feature-card small-feature-card feature-6">
-           <h3>📣{{ "features.feature6.title" | translate }}</h3>
-           <p>{{ "features.feature6.desc" | translate }}</p>
-         </div>
-       </div>
+        <!-- Feature 4 -->
+        <div #feature4 class="feature-card small-feature-card feature-5">
+          <h3>💡{{ "features.feature4.title" | translate }}</h3>
+          <p>{{ "features.feature4.desc" | translate }}</p>
+        </div>
+
+        <!-- Feature 5 -->
+        <div #feature4 class="feature-card small-feature-card feature-5">
+          <h3>🛡️{{ "features.feature5.title" | translate }}</h3>
+          <p>{{ "features.feature5.desc" | translate }}</p>
+        </div>
+
+        <!-- Feature 6 -->
+        <div #feature4 class="feature-card small-feature-card feature-6">
+          <h3>📣{{ "features.feature6.title" | translate }}</h3>
+          <p>{{ "features.feature6.desc" | translate }}</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>

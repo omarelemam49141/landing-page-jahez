@@ -26,6 +26,7 @@
   margin-bottom: 24px;
 }
 .btns {
+  margin-bottom: 18px;
   perspective: 300px;
   .join-us-btn {
     background: var(--color-primary-light);
@@ -35,12 +36,19 @@
     padding: 10px 48px;
     font-weight: 600;
     cursor: pointer;
-    margin-bottom: 18px;
     transition: background 0.2s;
   }
-  
+
   .join-us-btn:hover {
     background: var(--color-primary);
+  }
+}
+
+:lang(en) {
+  @media screen and (min-width: 992px) {
+    .btns {
+      flex-direction: row-reverse !important;
+    }
   }
 }
 

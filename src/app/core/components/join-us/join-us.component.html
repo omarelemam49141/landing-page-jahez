@@ -8,9 +8,11 @@
     <p #desc class="join-us-desc fs-18">
       {{ 'JOIN_US.DESC' | translate }}
     </p>
-    <div class="btns">
+    <div class="btns d-flex flex-column gap-3 flex-lg-row justify-content-center align-items-center"  #btns>
 
-      <button #button class="join-us-btn">{{ 'JOIN_US.BUTTON' | translate }}</button>
+      <button #button_team class="join-us-btn">{{ 'JOIN_US_TEAM.BUTTON' | translate }}</button>
+      <button #button_merchant class="join-us-btn">{{ 'JOIN_US_MERCHANT.BUTTON' | translate }}</button>
+      <button #button_investor class="join-us-btn">{{ 'JOIN_US_INVESTOR.BUTTON' | translate }}</button>
     </div>
     <!-- <div #footer class="join-us-footer">
       <span #privacy class="join-us-privacy">{{ 'JOIN_US.PRIVACY' | translate }}</span>

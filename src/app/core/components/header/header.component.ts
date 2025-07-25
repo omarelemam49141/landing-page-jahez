@@ -137,8 +137,7 @@ export class HeaderComponent implements AfterViewInit, OnDestroy, OnInit {
         start: 'bottom 20%', // Animation starts when header section enters viewport
         end: 'bottom top', // Animation ends when header section leaves viewport
         scrub: headerTextScrub, // Smooth scrubbing
-        scroller: '.page-container',
-        markers: true, // Keep markers for debugging
+        scroller: '.page-container'
       },
     });
     console.log('HeaderComponent: Header text ScrollTrigger created:', this.scrollTriggerInstance);

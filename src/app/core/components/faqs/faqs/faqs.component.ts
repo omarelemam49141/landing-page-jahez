@@ -73,7 +73,6 @@ export class FaqsComponent implements OnInit, AfterViewInit {
           trigger: faqsForm,
           start: this.startEndScrollTrigger,
           end: this.startEndScrollTrigger,
-          // markers: true,
           toggleActions: 'play none none reverse'
         }
       });
@@ -96,7 +95,6 @@ export class FaqsComponent implements OnInit, AfterViewInit {
           trigger: faqsForm,
           start: 'top 70%',
           end: 'bottom 70%',
-          // markers: true,
           toggleActions: 'play none none reverse'
         }
       });
@@ -111,7 +109,6 @@ export class FaqsComponent implements OnInit, AfterViewInit {
           trigger: faqsList,
           start: 'top 70%',
           end: 'bottom 70%',
-          // markers: true,
           toggleActions: 'play none none reverse'
         }
       });
@@ -158,7 +155,6 @@ export class FaqsComponent implements OnInit, AfterViewInit {
         end: this.startEndScrollTrigger,
         toggleActions: 'play none none reverse',
         animation: tl
-        // markers: true
       });
     });
 
@@ -170,7 +166,6 @@ export class FaqsComponent implements OnInit, AfterViewInit {
         end: 'bottom 90%',
         toggleActions: 'play none none reverse',
         animation: tl
-        // markers: true
       });
     });
     

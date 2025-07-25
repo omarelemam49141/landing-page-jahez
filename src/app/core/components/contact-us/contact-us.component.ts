@@ -76,7 +76,7 @@ export class ContactUsComponent implements AfterViewInit, OnInit {
    * Initialize minimal GSAP animations for the contact us section
    */
   private initializeAnimations() {
-    // No animations needed for this design
+ 
   }
 
   /**

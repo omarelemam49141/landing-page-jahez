@@ -113,12 +113,21 @@
     overflow: hidden;
     border-radius: 0px 0px 20px 20px;
     .page-1 {
+      background: linear-gradient(to bottom, var(--color-primary), white);
       position: absolute;
       height: 100%;
       width: 100%;
       top: 0;
       right: 0;
       top: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        width: 150px;
+        height: 100%;
+        object-fit: contain;
+      }
     }
     .page-2 {
       position: absolute;
@@ -136,7 +145,7 @@
   max-width: 350px;
   height: auto;
   border-radius: 0px 0px 20px 20px;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  // box-shadow: 0 8px 32px rgba(0,0,0,0.12);
 }
 
 @media (max-width: 991px) {
